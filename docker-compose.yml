@@ -1,0 +1,49 @@
+version: '3.8'
+services:
+  ew_elasticsearch:
+    image: elasticsearch:7.9.0
+    ports:
+      - 9201:9200
+    container_name: ew_elasticsearch
+    environment:
+      - discovery.type=single-node
+      - node.name=ewes
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+
+  ew_kibana:
+    image: kibana:7.9.0
+    ports:
+      - 5602:5601
+    container_name: ew_kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://ew_elasticsearch:9200
+
+  ew_postgres:
+    image: postgres:latest
+    container_name: ew_postgres
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=toor
+      - POSTGRES_DB=ewdb
+    volumes:
+      - psql_data:/usr/share/postgres/data
+    ports:
+      - 5433:5432
+
+  ew_pgadmin:
+    image: dpage/pgadmin4
+    container_name: ew_pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@example.com
+      - PGADMIN_DEFAULT_PASSWORD=pass
+    ports:
+      - 8102:80
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+
+volumes:
+  es_data:
+  psql_data:
+  pgadmin_data:
