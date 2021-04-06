@@ -12,7 +12,3 @@ def index(request):
 @login_required
 def dashboard(request):
     return HttpResponse("Hello emoployee. You are logged in")
-
-
-def login(request):
-    return HttpResponse("Login view")
