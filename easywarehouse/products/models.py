@@ -9,11 +9,11 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey(Categories, on_delete=models.DO_NOTHING)
+    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     public_id = models.UUIDField(unique=True)
     name = models.CharField(max_length=50)
     quantity = models.PositiveIntegerField()
-    tags = models.TextField(blank=True, null=True)
+    tags = models.JSONField(null=True)
 
     class Meta:
         db_table = "products"
@@ -21,7 +21,7 @@ class Product(models.Model):
 
 class Image(models.Model):
     url = models.CharField(max_length=255)
-    product = models.ForeignKey("Products", on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
     class Meta:
         db_table = "images"
