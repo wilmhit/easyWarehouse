@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.postgres.fields import ArrayField
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
@@ -7,17 +7,15 @@ class Category(models.Model):
     class Meta:
         db_table = "categories"
 
-
 class Product(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
+    category = models.ManyToManyField(Category)
     public_id = models.UUIDField(unique=True)
     name = models.CharField(max_length=50)
     quantity = models.PositiveIntegerField()
-    tags = models.JSONField(null=True)
+    tags = ArrayField(models.CharField(max_length=50), blank=True)
 
     class Meta:
         db_table = "products"
-
 
 class Image(models.Model):
     url = models.CharField(max_length=255)
