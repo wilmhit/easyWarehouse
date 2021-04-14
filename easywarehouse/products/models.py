@@ -1,11 +1,13 @@
-from django.db import models
 from django.contrib.postgres.fields import ArrayField
+from django.db import models
+
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
 
     class Meta:
         db_table = "categories"
+
 
 class Product(models.Model):
     category = models.ManyToManyField(Category)
@@ -16,6 +18,7 @@ class Product(models.Model):
 
     class Meta:
         db_table = "products"
+
 
 class Image(models.Model):
     url = models.CharField(max_length=255)
