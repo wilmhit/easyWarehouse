@@ -27,6 +27,6 @@ jobs:
       - uses: actions/setup-python@v2
       - uses: knowsuchagency/poetry-install@v2
       - run: \
-          python black --check .
-          python isort --check .
+          poetry run black --check .
+          poetry run isort --check .
 
