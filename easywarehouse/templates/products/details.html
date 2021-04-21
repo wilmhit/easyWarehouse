@@ -1,0 +1,4 @@
+<h1>{{ object.name }}</h1>
+<p>{{ object.public_id }}</p>
+<a href="{% url 'products-delete' object.id %}">Delete the product</a>
+<a href="{% url 'products-update' object.id %}">Update the product</a>
