@@ -20,7 +20,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     category = models.ManyToManyField(Category)
-    public_id = models.UUIDField(unique=True, default=uuid4)
+    public_id = models.UUIDField(unique=True, default=uuid4, db_index=True)
     name = models.CharField(max_length=50)
     quantity = models.PositiveIntegerField(default=0)
     tags = ArrayField(models.CharField(max_length=50), blank=True)

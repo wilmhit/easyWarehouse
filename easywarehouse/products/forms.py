@@ -6,7 +6,8 @@ from . import models
 class ProductForm(ModelForm):
     class Meta:
         model = models.Product
-        fields = ["category", "name", "tags"]  # TODO: Split tags to an array
+        # TODO: Split the tags string during the serialization to save them as an array
+        fields = ["category", "name", "tags"]
 
 
 class CategoryForm(ModelForm):
