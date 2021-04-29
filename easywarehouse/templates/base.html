@@ -2,15 +2,10 @@
 <html>
     <head>
         <title>
-            {% block title %}
-                EasyWarehouse
-            {% endblock %}
+            {{ title }}
         </title>
 
         <meta charset="utf-8">
-        {% block meta %}
-
-        {% endblock %}
     </head>
     <body>
         <header>
@@ -28,8 +23,7 @@
             
             {% endblock %}
         </main>
-        <footer>
-            Copyright 2021
-        </footer>
+        {% block footer %}
+        {% endblock %}
     </body>
 </html>

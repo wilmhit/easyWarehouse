@@ -4,12 +4,11 @@
     
 {% endblock %}
 
-{% block meta %}
-
-{% endblock %}
-
 {% block header %}
-
+<form>
+    <input type="search" id="search_input" name="search_input">
+    <input type="submit" value="Search">
+</form>
 {% endblock %}
 
 {% block menu %}
@@ -18,4 +17,10 @@
 
 {% block content %}
 
+{% endblock %}
+
+{% block footer %}
+<footer>
+    Copyright 2021
+</footer>
 {% endblock %}
