@@ -2,7 +2,11 @@
 <html>
     <head>
         <title>
+           {% if title %}
             {{ title }}
+            {% else %}
+            EasyWarehouse
+            {% endif %}
         </title>
 
         <meta charset="utf-8">
@@ -23,7 +27,10 @@
             
             {% endblock %}
         </main>
-        {% block footer %}
-        {% endblock %}
+        <footer>
+            {% block footer %}
+
+            {% endblock %}
+        </footer>
     </body>
 </html>
