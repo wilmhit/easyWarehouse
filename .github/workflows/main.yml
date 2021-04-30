@@ -28,5 +28,5 @@ jobs:
       - uses: knowsuchagency/poetry-install@v2
       - run: |
           poetry run black --check --exclude="migrations" .
-          poetry run isort --check --exclude="migrations" .
+          poetry run isort --check --skip="migrations" .
 
