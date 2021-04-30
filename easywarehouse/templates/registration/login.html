@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
+{% block content %}
 <form method="POST" action="{% url 'login' %}">
     {% csrf_token %}
     <label>
@@ -13,4 +13,4 @@
     {{ form.errors }}
     <input type="submit" />
 </form>
-</html>
+{% endblock %}

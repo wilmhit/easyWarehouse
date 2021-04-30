@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
@@ -11,7 +12,7 @@ from .models import Category, Product
 
 # TODO: Move index and dashboard to another app
 def index(request):
-    return HttpResponse('<h1>Hello, this is index page</h1> <a href="/login">login</a>')
+    return render(request, "index.html")
 
 
 @login_required
