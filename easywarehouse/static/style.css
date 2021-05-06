@@ -36,8 +36,7 @@ header {
 }
 
 header h1 {
-    font-size: 2rem;
-    padding: 1rem;
+    font-size: 1rem;
     margin: 0;
 }
 
@@ -79,6 +78,17 @@ input:focus {
     border: 2px solid var(--accent)
 }
 
+label {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+label * {
+    margin: 0 10px;
+}
+
 .search-bar {
     background-color: var(--inactive-element);
     width: 100%;
@@ -100,4 +110,10 @@ input:focus {
     min-width: max-content;
     cursor: pointer;
 }
-
+.search-bar input[type=submit]:hover {
+    color: var(--accent);
+}
+.search-bar input[type=submit]:focus {
+    color: var(--accent);
+    text-decoration: underline;
+}
