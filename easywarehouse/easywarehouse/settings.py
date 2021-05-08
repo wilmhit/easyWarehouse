@@ -67,9 +67,7 @@ TEMPLATES = [
     },
 ]
 
-STATICFILES_DIRS = [
-    f"{BASE_DIR}/static"
-]
+STATICFILES_DIRS = [f"{BASE_DIR}/static"]
 
 WSGI_APPLICATION = "easywarehouse.wsgi.application"
 
