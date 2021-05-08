@@ -1,0 +1,119 @@
+:root {
+    --text: white;
+    --foreground: rgb(61, 61, 61);
+    --far-background: rgb(34, 34, 34);
+    --inactive-element: rgb(20, 20, 20);
+    --active-element: rgb(40, 40, 40);
+    --accent: blue;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    place-items: center;
+    color: var(--text);
+    background-color: var(--far-background);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    height: 5vh;
+    width: 100%;
+    background-color: var(--accent);
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    box-shadow: 0 5px 15px black;
+}
+
+header h1 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+footer {
+    min-height: 5vh;
+    height: fit-content;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--foreground);
+}
+
+.container {
+    width: 100vw;
+    height: min-content;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    justify-content: center;
+}
+
+input {
+    border-radius: 5px;
+    border: 2px solid var(--far-background);
+    padding: 0.5em;
+    color: var(--text);
+    background-color: var(--inactive-element);
+}
+
+input:hover {
+    background-color: var(--active-element);
+}
+
+input:focus {
+    outline: none;
+    background-color: var(--active-element);
+    border: 2px solid var(--accent)
+}
+
+label {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+label * {
+    margin: 0 10px;
+}
+
+.search-bar {
+    background-color: var(--inactive-element);
+    width: 100%;
+    border: 3px solid var(--accent);
+    font-size: 1rem;
+    border-radius: 1.5em;
+    display: flex;
+    box-shadow: 0 0 7px black;
+}
+.search-bar input {
+    border: none;
+    background-color: transparent;
+}
+.search-bar input[type=search] {
+    width: 80%;
+}
+.search-bar input[type=submit] {
+    width: 20%;
+    min-width: max-content;
+    cursor: pointer;
+}
+.search-bar input[type=submit]:hover {
+    color: var(--accent);
+}
+.search-bar input[type=submit]:focus {
+    color: var(--accent);
+    text-decoration: underline;
+}

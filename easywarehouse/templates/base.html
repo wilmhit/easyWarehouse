@@ -1,36 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>
-           {% if title %}
-            {{ title }}
+            {% if title %}
+                {{ title }}
             {% else %}
-            EasyWarehouse
+                EasyWarehouse
             {% endif %}
         </title>
-
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
         <meta charset="utf-8">
     </head>
     <body>
         <header>
-            {% block header %}
             <h1>EasyWarehouse</h1>
+            {% block header %}
             {% endblock %}
         </header>
-        <nav>
-            {% block menu %}
+        <div class="container">
+            <nav>
+                {% block menu %}
             
-            {% endblock %}
-        </nav>
-        <main>
-            {% block content %}
+                {% endblock %}
+            </nav>
+            <main>
+                {% block content %}
             
-            {% endblock %}
-        </main>
+                {% endblock %}
+            </main>
+        </div>
         <footer>
             {% block footer %}
 
             {% endblock %}
         </footer>
     </body>
-</html>
+    </html>
