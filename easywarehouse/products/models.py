@@ -41,3 +41,6 @@ class Image(models.Model):
 
     class Meta:
         db_table = "images"
+
+class Upload(models.Model):
+    

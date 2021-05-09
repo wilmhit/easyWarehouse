@@ -7,7 +7,7 @@ from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 from .forms import CategoryForm, ProductForm
-from .models import Category, Product
+from .models import Category, Product, Upload, Image
 
 
 # TODO: Move index and dashboard to another app
@@ -18,6 +18,15 @@ def index(request):
 @login_required
 def dashboard(request):
     return HttpResponse("Hello employee. You are logged in")
+
+def image_upload(request): # TODO class
+    if request.method == "POST":
+        image = request.FILES["image"]
+        upload = Upload(file=image)
+        upload.save()
+        # TODO add url to image
+        image = Image(url = upload.file.url)
+    return render(request, "product/images.html")
 
 
 class ListProducts(LoginRequiredMixin, ListView):
