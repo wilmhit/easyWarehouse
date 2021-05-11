@@ -3,6 +3,7 @@ from uuid import uuid4
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.urls import reverse
+from easywarehouse.storage_backends import S3
 
 
 class Category(models.Model):
@@ -36,7 +37,7 @@ class Product(models.Model):
 
 
 class Image(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(storage=S3())
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
     def get_absolute_url(self):
