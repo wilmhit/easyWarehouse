@@ -6,8 +6,8 @@ from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
-from .forms import CategoryForm, ProductForm
-from .models import Category, Product, Upload, Image
+from .forms import CategoryForm, ProductForm, ImageForm
+from .models import Category, Product, Image
 
 
 # TODO: Move index and dashboard to another app
@@ -19,15 +19,27 @@ def index(request):
 def dashboard(request):
     return HttpResponse("Hello employee. You are logged in")
 
-def image_upload(request): # TODO class
-    if request.method == "POST":
-        image = request.FILES["image"]
-        upload = Upload(file=image)
-        upload.save()
-        # TODO add url to image
-        image = Image(url = upload.file.url)
-    return render(request, "product/images.html")
+# Images
 
+class ImageDetails(LoginRequiredMixinm, DetailView):
+    template_name = "images/details.html"
+    model = Image
+
+class ListImages(LoginRequiredMixin, ListView):
+    template_name = "images/list.html"
+    model = Image
+    queryset = Image.objects.all()
+
+class DeleteImage(LoginRequiredMixin, DeleteView):
+    template_name = "images/delete.html"
+    model = Image
+    
+class AddImage(LoginRequiredMixin, CreateView):
+    template_name = "images/add.html"
+    form_class = ImageForm
+    models = Image
+
+# Products
 
 class ListProducts(LoginRequiredMixin, ListView):
     template_name = "products/list.html"

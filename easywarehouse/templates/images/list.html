@@ -1,0 +1,9 @@
+<h1>Images</h1>
+  <ul>
+    {% for image in object_list %}
+      <li>
+        <a href="{{ image.get_absolute_url }}">{{ image.image.url }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+<a href="{% url 'image-add' %}">Add new image</a>

@@ -36,11 +36,14 @@ class Product(models.Model):
 
 
 class Image(models.Model):
-    url = models.CharField(max_length=255)
+    image = models.ImageField()
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+    def get_absolute_url(self):
+        return reverse("images-details", kwargs={"pk": self.id})
+
+    def __str__(self):
+        return f"Image(url={self.image.url})"
 
     class Meta:
         db_table = "images"
-
-class Upload(models.Model):
-    
