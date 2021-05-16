@@ -3,6 +3,7 @@ from uuid import uuid4
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.urls import reverse
+
 from easywarehouse.storage_backends import S3
 
 

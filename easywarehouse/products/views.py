@@ -6,11 +6,11 @@ from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
-from .forms import CategoryForm, ProductForm, ImageForm
-from .models import Category, Product, Image
-
+from .forms import CategoryForm, ImageForm, ProductForm
+from .models import Category, Image, Product
 
 # TODO Separate each section as another app
+
 
 def index(request):
     return render(request, "index.html")
@@ -20,28 +20,35 @@ def index(request):
 def dashboard(request):
     return HttpResponse("Hello employee. You are logged in")
 
+
 # Images
+
 
 class ImageDetails(LoginRequiredMixin, DetailView):
     template_name = "images/details.html"
     model = Image
+
 
 class ListImages(LoginRequiredMixin, ListView):
     template_name = "images/list.html"
     model = Image
     queryset = Image.objects.all()
 
+
 class DeleteImage(LoginRequiredMixin, DeleteView):
     template_name = "images/delete.html"
     model = Image
     success_url = reverse_lazy("images-list")
-    
+
+
 class AddImage(LoginRequiredMixin, CreateView):
     template_name = "images/add.html"
     form_class = ImageForm
     models = Image
 
+
 # Products
+
 
 class ListProducts(LoginRequiredMixin, ListView):
     template_name = "products/list.html"
