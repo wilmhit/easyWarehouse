@@ -22,7 +22,7 @@ def dashboard(request):
 
 # Images
 
-class ImageDetails(LoginRequiredMixinm, DetailView):
+class ImageDetails(LoginRequiredMixin, DetailView):
     template_name = "images/details.html"
     model = Image
 
