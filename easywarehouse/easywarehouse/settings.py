@@ -126,12 +126,13 @@ if os.getenv('USE_AWS_S3') == "TRUE":
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
     AWS_DEFAULT_ACL = 'public-read'
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    AWS_S3_CUSTOM_DOMAIN = f's3.eu-central-1.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+MEDIA_ROOT = "/media/"
 STATIC_URL = "/static/"
 LOGIN_REDIRECT_URL = "/dashboard"
 LOGOUT_REDIRECT_URL = "/"

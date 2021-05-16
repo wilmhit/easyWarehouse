@@ -18,4 +18,4 @@ class CategoryForm(ModelForm):
 class ImageForm(ModelForm):
     class Meta:
         model = models.Image
-        fields = ["image"]
+        fields = ["image", "product"]

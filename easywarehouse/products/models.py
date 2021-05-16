@@ -38,7 +38,7 @@ class Product(models.Model):
 
 class Image(models.Model):
     image = models.ImageField(storage=S3())
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
 
     def get_absolute_url(self):
         return reverse("images-details", kwargs={"pk": self.id})

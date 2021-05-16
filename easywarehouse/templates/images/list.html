@@ -2,7 +2,7 @@
   <ul>
     {% for image in object_list %}
       <li>
-        <a href="{{ image.get_absolute_url }}">{{ image.image.url }}</a>
+        <a href="{{ image.get_absolute_url }}">{{ image.id }}</a>
       </li>
     {% endfor %}
   </ul>

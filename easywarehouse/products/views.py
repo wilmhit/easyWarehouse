@@ -34,6 +34,7 @@ class ListImages(LoginRequiredMixin, ListView):
 class DeleteImage(LoginRequiredMixin, DeleteView):
     template_name = "images/delete.html"
     model = Image
+    success_url = reverse_lazy("images-list")
     
 class AddImage(LoginRequiredMixin, CreateView):
     template_name = "images/add.html"
