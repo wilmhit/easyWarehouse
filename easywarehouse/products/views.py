@@ -10,7 +10,8 @@ from .forms import CategoryForm, ProductForm, ImageForm
 from .models import Category, Product, Image
 
 
-# TODO: Move index and dashboard to another app
+# TODO Separate each section as another app
+
 def index(request):
     return render(request, "index.html")
 
@@ -71,7 +72,7 @@ class DeleteProduct(LoginRequiredMixin, DeleteView):
     model = Product
 
 
-# TODO: Move categories to separate app
+# Categories
 
 
 class ListCategories(LoginRequiredMixin, ListView):
