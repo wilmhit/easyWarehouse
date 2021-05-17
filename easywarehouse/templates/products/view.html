@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'product.css' %}">
+
+<section class="product">
+    <div class="image-box">
+        <img src="" alt="Product image"/>
+        <div class="sub-images">
+            <a href="#"><img src="" alt="PI"/></a>
+            <a href="#"><img src="" alt="PI"/></a>
+            <a href="#"><img src="" alt="PI"/></a>
+        </div>
+    </div>
+    <div class="product-info">
+        <a href="">Title</a>
+        <p class="description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis turpis id magna convallis faucibus eget sed nunc. Phasellus ac leo in ligula scelerisque dictum. Nunc vestibulum leo sit amet mollis accumsan. Nullam consequat lorem in leo tempus dapibus. Fusce rutrum mi commodo nisi congue dapibus. Etiam at diam porttitor, tincidunt lectus vel, commodo urna. Aliquam sollicitudin porta ex sed rhoncus. Etiam libero lacus, finibus quis cursus sed, hendrerit eu arcu. Mauris porta vitae nisi sed malesuada. Vivamus et laoreet sem, id tincidunt nisi. Integer ex purus, aliquet quis lectus facilisis, auctor tincidunt quam.
+        </p>
+        <p class="tags">
+            <a href="#">#aaa</a>
+            <a href="#">#aaa</a>
+            <a href="#">#aaa</a>
+        </p>
+    </div>
+
+</section>
+{% endblock %}

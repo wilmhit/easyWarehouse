@@ -1,0 +1,12 @@
+section.product{
+    display: flex;
+    flex-direction: row;
+}
+section.product div.image-box{
+    height:100%;
+    width: 30%;
+    border: 1px solid white;
+}
+section.product div.image-box div.sub-images{
+    display: flex;
+}

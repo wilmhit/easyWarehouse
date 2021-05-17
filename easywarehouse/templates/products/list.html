@@ -1,9 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'product_list.css' %}">
+
 <h1>Products List</h1>
-  <ul>
+  <ul class="product-list">
+      <li>
+        <img src="a.jpg" alt="Product list">
+        <div>
+          <a href="{{ product.get_absolute_url }}">{{ product.name }}Name</a>
+          <p class="short-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse posuere felis sed urna consequat, nec rhoncus justo ornare. Nulla sollicitudin sem ut sem porta volutpat. In varius lacus congue pretium porta. Pellentesque bibendum, enim ac gravida ultrices, lectus enim laoreet magna, eget rutrum nisl dolor eget eros. Nulla eget sollicitudin leo.
+          </p>
+        </div>
+      </li>
     {% for product in object_list %}
       <li>
+        <img src="a.jpg" alt="Product list">
         <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
       </li>
     {% endfor %}
   </ul>
 <a href="{% url "products-add" %}">Add new product</a>
+{% endblock %}

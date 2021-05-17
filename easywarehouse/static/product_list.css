@@ -1,0 +1,10 @@
+ul.product-list{
+    list-style: none;
+}
+ul.product-list li{
+    display: flex;
+    flex-direction: row;
+}
+ul.product-list li div{
+    margin: 10px;
+}

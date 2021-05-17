@@ -14,6 +14,11 @@ from .models import Category, Product
 def index(request):
     return render(request, "index.html")
 
+def test(request):
+    return  render(request, "products/view.html")
+
+def test_list(request):
+    return render(request, "products/list.html")
 
 @login_required
 def dashboard(request):
