@@ -18,6 +18,9 @@ services:
     container_name: ew_kibana
     environment:
       - ELASTICSEARCH_HOSTS=http://ew_elasticsearch:9200
+      - SERVERNAME=localhost
+    depends_on:
+      - ew_elasticsearch
 
   ew_postgres:
     image: postgres:latest
@@ -42,6 +45,25 @@ services:
     volumes:
       - pgadmin_data:/var/lib/pgadmin
 
+  ew_logstash:
+    links:  # Logstash does not support underscores in host names
+      - "ew_elasticsearch:elasticsearch"
+    container_name: ew_logstash
+    build: ./logstash
+    environment:
+      - LOGSTASH_JDBC_URL=jdbc:postgresql://ew_postgres:5432/ewdb
+      - LOGSTASH_JDBC_DRIVER=org.postgresql.Driver
+      - LOGSTASH_JDBC_USERNAME=root
+      - LOGSTASH_JDBC_PASSWORD=toor
+      - LOGSTASH_ELASTICSEARCH_HOST=http://elasticsearch:9200
+    ports:
+      - 9601:9600
+      - 5045:5044
+    depends_on:
+      - ew_elasticsearch
+      - ew_postgres
+    volumes:
+       - ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
 
 volumes:
   es_data:

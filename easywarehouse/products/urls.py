@@ -19,4 +19,8 @@ urlpatterns = [
     path("categories/<int:pk>/delete/", views.DeleteCategory.as_view(), name="categories-delete"),
     path("test", views.test),
     path("test_list", views.test_list),
+    path("images", views.ListImages.as_view(), name="images-list"),
+    path("images/add", views.AddImage.as_view(), name="images-add"),
+    path("images/<int:pk>/delete", views.DeleteImage.as_view(), name="images-delete"),
+    path("images/<int:pk>/details", views.ImageDetails.as_view(), name="images-details"),
 ]
