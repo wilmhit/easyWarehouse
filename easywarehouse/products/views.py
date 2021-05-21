@@ -15,12 +15,6 @@ from .models import Category, Image, Product
 def index(request):
     return render(request, "index.html")
 
-def test(request):
-    return  render(request, "products/view.html")
-
-def test_list(request):
-    return render(request, "products/list.html")
-
 @login_required
 def dashboard(request):
     return HttpResponse("Hello employee. You are logged in")

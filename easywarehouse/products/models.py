@@ -26,6 +26,7 @@ class Product(models.Model):
     name = models.CharField(max_length=50)
     quantity = models.PositiveIntegerField(default=0)
     tags = ArrayField(models.CharField(max_length=50), blank=True)
+    description=models.TextField(default="")
 
     def __str__(self):
         return f"Product(name={self.name})"
@@ -39,7 +40,7 @@ class Product(models.Model):
 
 class Image(models.Model):
     image = models.ImageField(storage=S3())
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, related_name='images')
 
     def get_absolute_url(self):
         return reverse("images-details", kwargs={"pk": self.id})
