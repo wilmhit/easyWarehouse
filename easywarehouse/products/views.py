@@ -15,6 +15,7 @@ from .models import Category, Image, Product
 def index(request):
     return render(request, "index.html")
 
+
 @login_required
 def dashboard(request):
     return HttpResponse("Hello employee. You are logged in")
