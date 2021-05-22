@@ -1,9 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'product_list.css' %}">
+
 <h1>Products List</h1>
-  <ul>
+  <ul class="product-list">
     {% for product in object_list %}
       <li>
-        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+        <a href="{{ product.get_absolute_url }}">
+          <img src="{{product.images.first.image.url}}" alt="{{product.name}} photo">
+          <div>{{ product.name }}</div>
+        </a>
       </li>
     {% endfor %}
   </ul>
-<a href="{% url "products-add" %}">Add new product</a>
+{% endblock %}
