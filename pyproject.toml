@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "easywarehouse"
-version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
+name = "easyWarehouse"
+version = "0.2.0"
+description = "Best warehouse management software"
+authors = ["Jcob Chodubski", "Roland Jałoszyński", "Michał Wróbel"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
