@@ -2,10 +2,6 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'product.css' %}">
-    <!---
-    <h1>{{ object.name }}</h1>
-    <p>{{ object.public_id }}</p>
-    -->
     <section class="product">
         <div class="image-box">
             {% for img in object.images.all %}
@@ -39,6 +35,4 @@
             </aside>
         </div>
     </section>
-    <a href="{% url 'products-delete' object.id %}">Delete the product</a>
-    <a href="{% url 'products-update' object.id %}">Update the product</a>
 {% endblock %}

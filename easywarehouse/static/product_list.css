@@ -1,13 +1,18 @@
 ul.product-list{
     list-style: none;
 }
+ul.product-list li{
+    margin: 15px 0;
+    height: 200px;
+}
 ul.product-list li a{
     display: flex;
     flex-direction: row;
     border: 1px solid white;
     text-decoration: none;
-    color:black;
-    font-size: 3.5em;
+    color: var(--text);
+    font-size: 1.5em;
+    height: 100%;
 }
 ul.product-list li div{
     margin: auto 0;
@@ -16,7 +21,8 @@ ul.product-list li div{
 
 ul.product-list li img{
     width: 30%;
-    height: auto;
+    height: 100%;
+    object-fit: contain;
     display: block;
     padding: 5px;
     border-right: 1px solid white;

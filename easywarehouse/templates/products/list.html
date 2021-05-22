@@ -9,11 +9,10 @@
     {% for product in object_list %}
       <li>
         <a href="{{ product.get_absolute_url }}">
-          <img src="{{product.images.first.image.url}}" alt="Product list">
+          <img src="{{product.images.first.image.url}}" alt="{{product.name}} photo">
           <div>{{ product.name }}</div>
         </a>
       </li>
     {% endfor %}
   </ul>
-<a href="{% url "products-add" %}">Add new product</a>
 {% endblock %}

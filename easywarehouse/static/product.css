@@ -28,7 +28,7 @@ section.product  .product-info{
 
 section.product  .product-info .tags a{
     text-decoration: none;
-    color: white;
+    color: var(--text);
 }
 
 section.product  .product-info .description{
