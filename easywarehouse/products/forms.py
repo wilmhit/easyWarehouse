@@ -1,13 +1,15 @@
-from django.forms import ModelForm
+from django.contrib.postgres.forms import SimpleArrayField
+from django.forms import ModelForm, CharField
 
 from . import models
 
 
 class ProductForm(ModelForm):
+    tags = SimpleArrayField(CharField(max_length=20))
+
     class Meta:
         model = models.Product
-        # TODO: Split the tags string during the serialization to save them as an array
-        fields = ["category", "name", "tags"]
+        fields = ["category", "name", "tags", "description"]
 
 
 class CategoryForm(ModelForm):
