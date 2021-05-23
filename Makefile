@@ -1,5 +1,4 @@
-MANAGE = easywarehouse/manage.py
-PYMANAGE = python $(MANAGE)
+PYMANAGE = python easywarehouse/manage.py
 
 format:
 	poetry run black easywarehouse
@@ -15,6 +14,8 @@ migrate:
 runserver:
 	$(PYMANAGE) runserver
 
-add-admin:
-	$(PYMANAGE) createsuperuser --username admin --email admin@127.0.0.1
-
+superuser:
+	DJANGO_SUPERUSER_PASSWORD=admin \
+	DJANGO_SUPERUSER_USERNAME=admin \
+	DJANGO_SUPERUSER_EMAIL=admin@easywarehouse.local \
+	$(PYMANAGE) createsuperuser  --noinput
