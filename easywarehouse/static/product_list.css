@@ -1,10 +1,12 @@
 ul.product-list{
     list-style: none;
 }
+
 ul.product-list li{
     margin: 15px 0;
     height: 200px;
 }
+
 ul.product-list li a{
     display: flex;
     flex-direction: row;
@@ -14,6 +16,7 @@ ul.product-list li a{
     font-size: 1.5em;
     height: 100%;
 }
+
 ul.product-list li div{
     margin: auto 0;
     margin-left: 5%;

@@ -11,7 +11,7 @@
  - Build on Django framework
  - Independent analytics platform
 
-## What it looks like
+## How it looks like
 
 ![Screenshot](doc/screenshot.jpeg)
 
@@ -26,16 +26,19 @@
 
 ## Development
 
- 0. Dependencies are managed with poetry. You can install poetry with command:
+ 1. Dependencies are managed with poetry. You can install poetry with command:
     `python -m pip install poetry`
     
  1. To initialize virtualenv and install packages, run: `poetry install`
     
- 2. All databases and their admin panels are defined in *docker-compose.py*.
+ 1. All databases and their admin panels are defined in *docker-compose.py*.
     To run all of them type: `docker-compose up`. To run particular service,
     enter: `docker-compose up <service-name>`
     
- 3. To start the server, run: `python easywarehouse/manage.py runserver`
+ 1. To start the server, run: `make runserver`
+
+ 1. To load sample data, hit: `make loaddata`. Note that you'll may need to manually 
+    upload the images if you're using your own media bucket.
     
- 4. Before pushing your changes, format the code with black and isort:
+ 1. Before pushing your changes, format the code with black and isort:
     `make format`
