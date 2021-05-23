@@ -8,6 +8,7 @@ from easywarehouse.storage_backends import S3
 
 
 class Category(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
 
     def __str__(self):
@@ -21,6 +22,7 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    id = models.AutoField(primary_key=True)
     category = models.ManyToManyField(Category)
     public_id = models.UUIDField(unique=True, default=uuid4, db_index=True)
     name = models.CharField(max_length=50)
@@ -39,6 +41,7 @@ class Product(models.Model):
 
 
 class Image(models.Model):
+    id = models.AutoField(primary_key=True)
     image = models.ImageField(storage=S3())
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, null=True, related_name="images"
