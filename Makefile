@@ -19,3 +19,12 @@ superuser:
 	DJANGO_SUPERUSER_USERNAME=admin \
 	DJANGO_SUPERUSER_EMAIL=admin@easywarehouse.local \
 	$(PYMANAGE) createsuperuser  --noinput
+
+dumpdata:
+	$(PYMANAGE) dumpdata products.Image products.Category products.Product  -o data/dump.json.gz --format json
+
+loaddata:
+	$(PYMANAGE) loaddata data/dump.json.gz
+
+flush:
+	$(PYMANAGE) flush --noinput

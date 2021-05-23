@@ -1,5 +1,5 @@
 from django.contrib.postgres.forms import SimpleArrayField
-from django.forms import ModelForm, CharField
+from django.forms import CharField, ModelForm
 
 from . import models
 
