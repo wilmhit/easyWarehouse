@@ -27,6 +27,7 @@ class Product(models.Model):
     public_id = models.UUIDField(unique=True, default=uuid4, db_index=True)
     name = models.CharField(max_length=50)
     quantity = models.PositiveIntegerField(default=0)
+    good_availability_threshold = models.PositiveIntegerField()
     tags = ArrayField(models.CharField(max_length=50), blank=True)
     description = models.TextField(default="")
 
