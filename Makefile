@@ -21,10 +21,10 @@ superuser:
 	$(PYMANAGE) createsuperuser  --noinput
 
 dumpdata:
-	$(PYMANAGE) dumpdata products.Image products.Category products.Product  -o data/dump.json.gz --format json
+	$(PYMANAGE) dumpdata products.Image products.Category products.Product  -o data/dump.json --format json
 
 loaddata:
-	$(PYMANAGE) loaddata data/dump.json.gz
+	$(PYMANAGE) loaddata data/dump.json
 
 flush:
 	$(PYMANAGE) flush --noinput
