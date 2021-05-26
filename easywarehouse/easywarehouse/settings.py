@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "products",
     "storages",
+    "django_elasticsearch_dsl",
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,10 @@ STATIC_URL = "/static/"
 LOGIN_REDIRECT_URL = "/dashboard"
 LOGOUT_REDIRECT_URL = "/"
 LOGIN_URL = "/login"
+
+# Elasticsearch DSL
+ELASTICSEARCH_DSL = {
+    "default": {
+        "hosts": "localhost:9201",
+    },
+}

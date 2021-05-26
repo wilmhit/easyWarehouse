@@ -6,8 +6,10 @@ from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
+from .documents import ProductDocument
 from .forms import CategoryForm, ImageForm, ProductForm
 from .models import Category, Image, Product
+
 
 # TODO Separate each section as another app
 
@@ -54,6 +56,13 @@ class ListProducts(LoginRequiredMixin, ListView):
     template_name = "products/list.html"
     models = Product
     queryset = Product.objects.all()
+
+    def get_queryset(self):
+        query = self.request.GET.get("text-search", "")
+        matched_products = ProductDocument.search().query(
+            "simple_query_string", query=query, fields=["name^5", "description"]
+        )
+        return matched_products
 
 
 class ProductDetails(LoginRequiredMixin, DetailView):

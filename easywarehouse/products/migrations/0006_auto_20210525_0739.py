@@ -6,29 +6,29 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('products', '0005_auto_20210521_1325'),
+        ("products", "0005_auto_20210521_1325"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='product',
-            name='max_quantity',
+            model_name="product",
+            name="max_quantity",
             field=models.PositiveIntegerField(default=100),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='category',
-            name='id',
+            model_name="category",
+            name="id",
             field=models.AutoField(primary_key=True, serialize=False),
         ),
         migrations.AlterField(
-            model_name='image',
-            name='id',
+            model_name="image",
+            name="id",
             field=models.AutoField(primary_key=True, serialize=False),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='id',
+            model_name="product",
+            name="id",
             field=models.AutoField(primary_key=True, serialize=False),
         ),
     ]
