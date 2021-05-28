@@ -10,7 +10,6 @@ from .documents import ProductDocument
 from .forms import CategoryForm, ImageForm, ProductForm
 from .models import Category, Image, Product
 
-
 # TODO Separate each section as another app
 
 
