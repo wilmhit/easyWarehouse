@@ -1,4 +1,10 @@
-<h1>Images</h1>
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'list.css' %}">
+
+ <h1>Images</h1>
   <ul>
     {% for image in object_list %}
       <li>
@@ -7,3 +13,4 @@
     {% endfor %}
   </ul>
 <a href="{% url 'images-add' %}">Add new image</a>
+{% endblock %}

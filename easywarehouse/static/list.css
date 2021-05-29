@@ -1,0 +1,17 @@
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+ul li{
+    margin: 15px 0;
+}
+
+ul li a{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid white;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1.5em;
+}
