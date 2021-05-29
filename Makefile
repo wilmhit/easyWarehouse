@@ -1,7 +1,7 @@
 PYMANAGE = python easywarehouse/manage.py
 
 format:
-	poetry run black easywarehouse
+	poetry run black easywarehouse --exclude migrations
 	poetry run isort easywarehouse
 
 makemigrate:

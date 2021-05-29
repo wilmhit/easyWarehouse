@@ -30,6 +30,7 @@ class Product(models.Model):
     good_availability_threshold = models.PositiveIntegerField()
     tags = ArrayField(models.CharField(max_length=50), blank=True)
     description = models.TextField(default="")
+    main_image_url = models.URLField(null=True, blank=True)
 
     def __str__(self):
         return f"Product(name={self.name})"
