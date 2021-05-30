@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'employee.css' %}">
+    {% block employee_page_stye %}
+    {% endblock %}
+{% endblock %}
+
+{% block menu %}
+    <a href="...">First link</a>
+    <a href="...">Second link</a>
+    <a href="...">Third link</a>
+    <a href="...">Fourth link</a>
+    <a href="...">Fifth link</a>
+{% endblock %}
+

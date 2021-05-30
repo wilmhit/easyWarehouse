@@ -1,0 +1,39 @@
+
+main {
+    flex: 5;
+}
+
+nav {
+    flex: 1;
+    background: var(--foreground);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 10px;
+    border-bottom: 1px solid var(--far-background);
+}
+
+nav a {
+    padding: 15px;
+    font-variant-caps: petite-caps;
+    font-weight: bolder;
+    text-decoration: none;
+    color: var(--text);
+}
+
+nav a:hover {
+    text-decoration: underline;
+    background-color: var(--far-background);
+    opacity: 0.8;
+}
+
+.login-message {
+    font-size: 2rem;
+    color: var(--accent);
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+}

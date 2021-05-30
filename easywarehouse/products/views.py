@@ -19,7 +19,7 @@ def index(request):
 
 @login_required
 def dashboard(request):
-    return HttpResponse("Hello employee. You are logged in")
+    return render(request, "employee/dashboard.html")
 
 
 # Images
