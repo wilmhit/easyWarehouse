@@ -11,7 +11,15 @@
         </div>
 
         <ul>
-            <li>Hello <div class="buttons">Delete</div></li>
+            {% for product in object_list %}
+                <li>
+                    {{ product.name }}
+                    <div class="buttons">
+                        <a href="...">Details</a> <!-- TODO -->
+                        <a href="{% url 'products-details'  product.id %}">View as Guest</a>
+                    </div>
+                </li>
+            {% endfor %}
         </ul>
     </div>
 {% endblock %}

@@ -28,6 +28,8 @@ class EmployeeProducts(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         query = self.request.GET.get("text-search", "")
+        if query == "":
+            return Product.objects.all()
         matched_products = ProductDocument.search().query(
             "simple_query_string", query=query, fields=["name^5", "description"]
         )
