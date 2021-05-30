@@ -7,10 +7,8 @@ from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 from .documents import ProductDocument
-from .forms import CategoryForm, ImageForm, ProductForm
-from .models import Category, Image, Product
-
-# TODO Separate each section as another app
+from .forms import ProductForm
+from .models import Product
 
 
 def index(request):
@@ -20,32 +18,6 @@ def index(request):
 @login_required
 def dashboard(request):
     return HttpResponse("Hello employee. You are logged in")
-
-
-# Images
-
-
-class ImageDetails(LoginRequiredMixin, DetailView):
-    template_name = "images/details.html"
-    model = Image
-
-
-class ListImages(LoginRequiredMixin, ListView):
-    template_name = "images/list.html"
-    model = Image
-    queryset = Image.objects.all()
-
-
-class DeleteImage(LoginRequiredMixin, DeleteView):
-    template_name = "images/delete.html"
-    model = Image
-    success_url = reverse_lazy("images-list")
-
-
-class AddImage(LoginRequiredMixin, CreateView):
-    template_name = "images/add.html"
-    form_class = ImageForm
-    models = Image
 
 
 # Products
@@ -87,36 +59,3 @@ class DeleteProduct(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy("products-list")
     model = Product
 
-
-# Categories
-
-
-class ListCategories(LoginRequiredMixin, ListView):
-    template_name = "categories/list.html"
-    models = Category
-    queryset = Category.objects.all()
-
-
-class CategoryDetails(LoginRequiredMixin, DetailView):
-    template_name = "categories/details.html"
-    model = Category
-
-
-class AddCategory(LoginRequiredMixin, CreateView):
-    template_name = "categories/add.html"
-    form_class = CategoryForm
-    success_url = reverse_lazy("categories-list")
-
-
-class UpdateCategory(LoginRequiredMixin, UpdateView):
-    template_name = "categories/update.html"
-    form_class = CategoryForm
-    success_url = reverse_lazy("categories-list")
-    model = Category
-
-
-class DeleteCategory(LoginRequiredMixin, DeleteView):
-    template_name = "categories/delete.html"
-    form_class = CategoryForm
-    success_url = reverse_lazy("categories-list")
-    model = Category

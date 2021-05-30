@@ -16,11 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import include, path
+from images.urls import urlpatterns as images_urls
 from products.urls import urlpatterns as products_urls
+from categories.urls import urlpatterns as categories_urls
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("login/", LoginView.as_view(), name="login"),
     path("logout/", LogoutView.as_view(), name="logout"),
-    path("", include(products_urls)),  # TODO: Adjust urls after splitting products and categories
+    path("", include(products_urls)),
+    path("", include(images_urls)),
+    path("", include(categories_urls)),
 ]
