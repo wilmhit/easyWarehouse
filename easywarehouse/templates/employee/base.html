@@ -3,15 +3,16 @@
 
 {% block style %}
     <link rel="stylesheet" type="text/css" href="{% static 'employee.css' %}">
-    {% block employee_page_stye %}
-    {% endblock %}
 {% endblock %}
+
+{% block header %}
+    Linus Torvalds
+{% endblock%}
 
 {% block menu %}
-    <a href="...">First link</a>
-    <a href="...">Second link</a>
-    <a href="...">Third link</a>
-    <a href="...">Fourth link</a>
-    <a href="...">Fifth link</a>
+    <a href="/categories">Category management</a>
+    <a href="/images">Image management</a>
+    <a href="/employee/products">Product management</a>
+    <a href="/employee/issue">Issue/Accept</a>
+    <a href="/employee/settings">Settings</a>
 {% endblock %}
-

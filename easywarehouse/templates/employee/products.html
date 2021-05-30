@@ -1,0 +1,17 @@
+{% extends "employee/base.html" %}
+
+
+{% block content %}
+    <div class="listing">
+        <div class="action-bar">
+            <form action="{% url 'employee-products' %}" method="get">
+                <input name="text-search" type="text" placeholder="Search...">
+            </form>
+            <a href="...">Add product</a>
+        </div>
+
+        <ul>
+            <li>Hello <div class="buttons">Delete</div></li>
+        </ul>
+    </div>
+{% endblock %}

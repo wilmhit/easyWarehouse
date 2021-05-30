@@ -1,6 +1,9 @@
 
 main {
     flex: 5;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
 }
 
 nav {
@@ -12,7 +15,6 @@ nav {
     padding-top: 10px;
     border-bottom: 1px solid var(--far-background);
 }
-
 nav a {
     padding: 15px;
     font-variant-caps: petite-caps;
@@ -20,9 +22,9 @@ nav a {
     text-decoration: none;
     color: var(--text);
 }
-
-nav a:hover {
+nav a:hover, nav a:focus {
     text-decoration: underline;
+    text-decoration-color: var(--accent);
     background-color: var(--far-background);
     opacity: 0.8;
 }
@@ -36,4 +38,75 @@ nav a:hover {
     display: flex;
     justify-content: center;
     place-items: center;
+}
+
+.action-bar {
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    background: var(--active-element);
+    margin: 10px;
+    border-radius: 20px;
+    padding: 5px 50px;
+    width: 100%;
+}
+.action-bar * {
+    margin: 0 10px;
+}
+.action-bar a {
+    color: var(--text);
+    text-decoration: none;
+    background: var(--inactive-element);
+    border: 1px solid var(--inactive-element);
+    padding: 7px;
+    border-radius: 3px;
+    opacity: 0.6;
+}
+.action-bar a:hover,
+.action-bar a:focus {
+    opacity: 1;
+    text-decoration: underline;
+    background: var(--active-element);
+    border: 1px solid var(--inactive-element);
+}
+
+.listing {
+    padding-top: 30px;
+    width: 85%;
+}
+.listing ul {
+    background: var(--active-element);
+    margin: 10px;
+    border-radius: 20px;
+    padding: 5px 0;
+    width: 100%;
+    list-style: none;
+    overflow: hidden;
+}
+.listing ul li {
+    position: relative;
+    padding:  10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.listing ul li .buttons {
+    opacity: 0;
+}
+.listing ul li::after {
+    content: "";
+    position: absolute;
+    border: 1px solid var(--far-background);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 15%;
+}
+.listing ul li:hover {
+    background: var(--far-background);
+}
+.listing ul li:hover::after {
+    border: 1px solid var(--accent);
+}
+.listing ul li:hover .buttons {
+    opacity: 1;
 }

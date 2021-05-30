@@ -21,6 +21,17 @@ def index(request):
 def dashboard(request):
     return render(request, "employee/dashboard.html")
 
+class EmployeeProducts(LoginRequiredMixin, ListView):
+    template_name = "employee/products.html"
+    models = Product
+    queryset = Product.objects.all()
+
+    def get_queryset(self):
+        query = self.request.GET.get("text-search", "")
+        matched_products = ProductDocument.search().query(
+            "simple_query_string", query=query, fields=["name^5", "description"]
+        )
+        return matched_products
 
 # Images
 
