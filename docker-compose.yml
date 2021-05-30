@@ -49,8 +49,9 @@ services:
     links:  # Logstash does not support underscores in host names
       - "ew_elasticsearch:elasticsearch"
     container_name: ew_logstash
-    build: ./logstash
+    build: logstash
     environment:
+      - LOGSTASH_JDBC_DRIVER_PATH=/usr/share/logstash/logstash-core/lib/jars/postgresql-42.2.5.jar
       - LOGSTASH_JDBC_URL=jdbc:postgresql://ew_postgres:5432/ewdb
       - LOGSTASH_JDBC_DRIVER=org.postgresql.Driver
       - LOGSTASH_JDBC_USERNAME=root
