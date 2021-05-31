@@ -1,10 +1,4 @@
 
-main {
-    flex: 5;
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-}
 
 nav {
     flex: 1;
