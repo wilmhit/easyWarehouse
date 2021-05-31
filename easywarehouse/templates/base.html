@@ -10,6 +10,9 @@
             {% endif %}
         </title>
         <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        {% block extra_head %}
+
+        {% endblock %}
         <meta charset="utf-8">
     </head>
     <body>
@@ -21,12 +24,12 @@
         <div class="container">
             <nav>
                 {% block menu %}
-            
+
                 {% endblock %}
             </nav>
             <main>
                 {% block content %}
-            
+
                 {% endblock %}
             </main>
         </div>

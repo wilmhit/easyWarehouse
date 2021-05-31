@@ -1,22 +1,34 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'product.css' %}">
+    {{ product_with_ratio|json_script:"product-ratio" }}
+    <script src={% static 'script/availabilityColors.js' %}></script>
+{% endblock %}
+
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{% static 'product.css' %}">
-    <section class="product">
+    <section class="product" id={{ object.public_id }}>
         <div class="image-box">
             {% for img in object.images.all %}
-                <img src="{{img.image.url}}" alt="Product image">
+                <img src="{{ img.image.url }}" alt="Product image">
             {% endfor %}
         </div>
         <div class="product-info">
-            <h1>{{ object.name }}</h1>
+            <div class="product-info-top"  >
+                <h1>{{ object.name }}</h1>
+                <div class="availability-bar-outer">
+                    <div class="availability-bar-inner"></div>
+                </div>
+            </div>
+
             <h3>Description: </h3>
             <p class="description">
-                {{object.description}}
+                {{ object.description }}
             </p>
             <p class="tags">
                 {% for tag in object.tags %}
-                <a href="#">#{{tag}}</a>
+                    <a href="#">#{{ tag }}</a>
                 {% endfor %}
             </p>
             <aside class="contact">
@@ -35,4 +47,13 @@
             </aside>
         </div>
     </section>
+
+    <script>
+        // JS please
+        const product = JSON.parse(
+            JSON.parse(document.getElementById("product-ratio").textContent)
+        );
+        setAvailabilityBar(product.id, product.ratio);
+    </script>
+
 {% endblock %}

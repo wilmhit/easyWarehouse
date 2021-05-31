@@ -85,6 +85,7 @@ label {
     justify-content: space-between;
     align-items: center;
 }
+
 label * {
     margin: 0 10px;
 }
@@ -121,4 +122,15 @@ label * {
 .search-bar input[type=submit]:focus {
     color: var(--accent);
     text-decoration: underline;
+}
+
+.availability-bar-outer {
+    background-color: grey;
+    width: 100px;
+    height: 20px;
+}
+
+.availability-bar-inner {
+    /* This style is dynamically adjusted with JS */
+    height: 100%;
 }
