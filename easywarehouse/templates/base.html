@@ -16,7 +16,9 @@
     </head>
     <body>
         <header>
-            <h1>EasyWarehouse</h1>
+            <a href="{% url 'index' %}">
+                <h1>EasyWarehouse</h1>
+            </a>
             {% if user.is_authenticated %}
                 <div class="user-menu">
                     <span>Logged in as <b>{{ user.username }}</b></span>

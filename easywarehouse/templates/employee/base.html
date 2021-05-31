@@ -5,14 +5,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'employee.css' %}">
 {% endblock %}
 
-{% block header %}
-    Linus Torvalds
-{% endblock%}
 
 {% block menu %}
-    <a href="/categories">Category management</a>
-    <a href="/images">Image management</a>
-    <a href="/employee/products">Product management</a>
-    <a href="/employee/issue">Issue/Accept</a>
-    <a href="/employee/settings">Settings</a>
+    <a href="{% url 'categories-list' %}">Category management</a>
+    <a href="{% url 'images-list' %}">Image management</a>
+    <a href="{% url 'products-list' %}">Product management</a>
+    <a href="{% url 'products-list' %}">Issue/Accept</a> <!-- TODO -->
+    <a href="{% url 'products-list' %}">Settings</a> <!-- TODO -->
 {% endblock %}

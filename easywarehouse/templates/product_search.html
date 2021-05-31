@@ -4,16 +4,16 @@
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{% static 'product_list.css' %}">
 
-    <h1>Products List</h1>
 
-    <form action="{% url 'products-list' %}" method="get">
+    <!-- TODO make the search bar the same as on index page -->
+    <form action="{% url 'search' %}" method="get">
         <input name="text-search" type="text" placeholder="Search...">
     </form>
 
     <ul class="product-list">
         {% for product in object_list %}
             <li>
-                <a href="{% url 'products-details'  product.id %}">
+                <a href="{% url 'products-guest'  product.id %}">
                     <img src="{{ product.main_image_url }}" alt="{{ product.name }} photo">
                     <div>{{ product.name }}</div>
                 </a>

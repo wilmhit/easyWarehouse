@@ -38,6 +38,11 @@ header {
 header h1 {
     font-size: 1rem;
     margin: 0;
+    cursor: default;
+    color: var(--text);
+}
+header > a {
+    text-decoration: none;
 }
 
 footer {
