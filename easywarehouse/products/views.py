@@ -1,4 +1,3 @@
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -11,16 +10,33 @@ from .forms import ProductForm
 from .models import Product
 
 
+# Guest views
+
 def index(request):
     return render(request, "index.html")
 
 
-@login_required
-def dashboard(request):
-    return render(request, "employee/dashboard.html")
+class ProductSearch(ListView):
+    template_name = "product_search.html"
+    models = Product
+    queryset = Product.objects.all()
 
-class EmployeeProducts(LoginRequiredMixin, ListView):
-    template_name = "employee/products.html"
+    def get_queryset(self):
+        query = self.request.GET.get("text-search", "")
+        matched_products = ProductDocument.search().query(
+            "simple_query_string", query=query, fields=["name^5", "description"]
+        )
+        return matched_products
+
+
+class ProductDetails(DetailView):
+    template_name = "product_details.html"
+    model = Product
+
+# Employee views 
+
+class ListProducts(LoginRequiredMixin, ListView):
+    template_name = "employee/products/list.html"
     models = Product
     queryset = Product.objects.all()
 
@@ -33,39 +49,23 @@ class EmployeeProducts(LoginRequiredMixin, ListView):
         )
         return matched_products
 
-
-class ListProducts(LoginRequiredMixin, ListView):
-    template_name = "products/list.html"
-    models = Product
-    queryset = Product.objects.all()
-
-    def get_queryset(self):
-        query = self.request.GET.get("text-search", "")
-        matched_products = ProductDocument.search().query(
-            "simple_query_string", query=query, fields=["name^5", "description"]
-        )
-        return matched_products
-
-
-class ProductDetails(LoginRequiredMixin, DetailView):
-    template_name = "products/details.html"
+class EmployeeProductDetails(LoginRequiredMixin, DetailView):
+    template_name = "employee/products/details.html"
     model = Product
 
-
 class AddProduct(LoginRequiredMixin, CreateView):
-    template_name = "products/add.html"
+    template_name = "employee/products/add.html"
     form_class = ProductForm
     success_url = reverse_lazy("products-list")
 
-
 class UpdateProduct(LoginRequiredMixin, UpdateView):
-    template_name = "products/update.html"
+    template_name = "employee/products/update.html"
     form_class = ProductForm
     success_url = reverse_lazy("products-list")
     model = Product
 
 
 class DeleteProduct(LoginRequiredMixin, DeleteView):
-    template_name = "products/delete.html"
+    template_name = "employee/products/delete.html"
     success_url = reverse_lazy("products-list")
     model = Product

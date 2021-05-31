@@ -7,6 +7,7 @@ from .forms import CategoryForm
 from .models import Category
 
 
+
 class ListCategories(LoginRequiredMixin, ListView):
     template_name = "categories/list.html"
     models = Category
