@@ -58,4 +58,3 @@ class DeleteProduct(LoginRequiredMixin, DeleteView):
     template_name = "products/delete.html"
     success_url = reverse_lazy("products-list")
     model = Product
-
