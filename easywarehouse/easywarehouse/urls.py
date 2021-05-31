@@ -16,9 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import include, path
-
-from products.urls import urlpatterns as public_urls
 from employee.urls import urlpatterns as employee_urls
+from products.urls import urlpatterns as public_urls
 
 urlpatterns = [
     path("admin/", admin.site.urls),

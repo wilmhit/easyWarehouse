@@ -9,8 +9,8 @@ from .documents import ProductDocument
 from .forms import ProductForm
 from .models import Product
 
-
 # Guest views
+
 
 def index(request):
     return render(request, "index.html")
@@ -33,7 +33,9 @@ class ProductDetails(DetailView):
     template_name = "product_details.html"
     model = Product
 
-# Employee views 
+
+# Employee views
+
 
 class ListProducts(LoginRequiredMixin, ListView):
     template_name = "employee/products/list.html"
@@ -49,14 +51,17 @@ class ListProducts(LoginRequiredMixin, ListView):
         )
         return matched_products
 
+
 class EmployeeProductDetails(LoginRequiredMixin, DetailView):
     template_name = "employee/products/details.html"
     model = Product
+
 
 class AddProduct(LoginRequiredMixin, CreateView):
     template_name = "employee/products/add.html"
     form_class = ProductForm
     success_url = reverse_lazy("products-list")
+
 
 class UpdateProduct(LoginRequiredMixin, UpdateView):
     template_name = "employee/products/update.html"

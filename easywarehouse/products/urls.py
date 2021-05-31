@@ -5,7 +5,7 @@ from . import views
 urlpatterns = [
     path("", views.index, name="index"),
     path("search/", views.ProductSearch.as_view(), name="search"),
-    path("product/<int:pk>", views.ProductDetails.as_view(), name="products-guest")
+    path("product/<int:pk>", views.ProductDetails.as_view(), name="products-guest"),
 ]
 
 employee_urlpatterns = [

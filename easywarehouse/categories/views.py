@@ -7,14 +7,13 @@ from .forms import CategoryForm
 from .models import Category
 
 
-
 class ListCategories(LoginRequiredMixin, ListView):
     template_name = "employee/categories/list.html"
     models = Category
     queryset = Category.objects.all()
 
 
-class CategoryDetails(LoginRequiredMixin, DetailView): 
+class CategoryDetails(LoginRequiredMixin, DetailView):
     # TODO remove this is useless. Category is only a title
     template_name = "employee/categories/details.html"
     model = Category
