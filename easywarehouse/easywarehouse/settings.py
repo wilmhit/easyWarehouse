@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     "products",
     "storages",
     "django_elasticsearch_dsl",
+    "images",
+    "employee",
+    "categories",
 ]
 
 MIDDLEWARE = [
