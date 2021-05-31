@@ -1,5 +1,20 @@
-<h1>{{ object.name }}</h1>
-<p>{{ object.image }}</p>
-<img src="{{ object.image.url }}" /><br/>
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'list.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'images.css' %}">
+    <h1>{{ object.name }}</h1>
+    <p>{{ object.image }}</p>
+
+    <img src="{{ object.image.url }}" /><br/>
+    <ul>
+        <li>
+          <a href="{% url 'images-delete' object.id %}">Delete image</a>
+        </li>
+    </ul>
+
 <p>Belongs to product: {{ object.product.id }}</p>
-<a href="{% url 'images-delete' object.id %}">Delete image</a>
+{% endblock %}
+
+
