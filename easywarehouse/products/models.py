@@ -1,6 +1,7 @@
 from uuid import uuid4
 
 from django.contrib.postgres.fields import ArrayField
+from django.core.validators import RegexValidator
 from django.db import models
 from django.urls import reverse
 
@@ -31,6 +32,11 @@ class Product(models.Model):
     tags = ArrayField(models.CharField(max_length=50), blank=True)
     description = models.TextField(default="")
     main_image_url = models.URLField(null=True, blank=True)
+    ean = models.CharField(
+        max_length=13,
+        validators=[RegexValidator(regex="[0-9]{13}", message="EAN can contain only numbers")],
+        default="0000000000000",
+    )
 
     def __str__(self):
         return f"Product(name={self.name})"
