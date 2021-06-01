@@ -1,5 +1,3 @@
-
-
 nav {
     flex: 1;
     background: var(--foreground);
@@ -16,7 +14,8 @@ nav a {
     text-decoration: none;
     color: var(--text);
 }
-nav a:hover, nav a:focus {
+nav a:hover,
+nav a:focus {
     text-decoration: underline;
     text-decoration-color: var(--accent);
     background-color: var(--far-background);
@@ -79,7 +78,7 @@ nav a:hover, nav a:focus {
 }
 .listing ul li {
     position: relative;
-    padding:  10px 20px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
 }

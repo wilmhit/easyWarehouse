@@ -35,14 +35,13 @@ header {
     box-shadow: 0 5px 15px black;
 }
 
-header h1 {
+header .logo h1 {
     font-size: 1rem;
     margin: 0;
     cursor: default;
     color: var(--text);
 }
-
-header>a {
+header .logo a {
     text-decoration: none;
 }
 
@@ -81,11 +80,9 @@ input {
     color: var(--text);
     background-color: var(--inactive-element);
 }
-
 input:hover {
     background-color: var(--active-element);
 }
-
 input:focus {
     outline: none;
     background-color: var(--active-element);
@@ -99,7 +96,6 @@ label {
     justify-content: space-between;
     align-items: center;
 }
-
 label * {
     margin: 0 10px;
 }
@@ -114,26 +110,21 @@ label * {
     display: flex;
     box-shadow: 0 0 7px black;
 }
-
 .search-bar input {
     border: none;
     background-color: transparent;
 }
-
 .search-bar input[type=search] {
     width: 80%;
 }
-
 .search-bar input[type=submit] {
     width: 20%;
     min-width: max-content;
     cursor: pointer;
 }
-
 .search-bar input[type=submit]:hover {
     color: var(--accent);
 }
-
 .search-bar input[type=submit]:focus {
     color: var(--accent);
     text-decoration: underline;
@@ -142,7 +133,6 @@ label * {
 .user-menu {
     position: relative;
 }
-
 .user-menu a {
     color: var(--color);
     position: absolute;
@@ -152,11 +142,9 @@ label * {
     text-align: center;
     display: none;
 }
-
 .user-menu:hover span {
     opacity: 0;
 }
-
 .user-menu:hover a {
     display: unset;
 }
