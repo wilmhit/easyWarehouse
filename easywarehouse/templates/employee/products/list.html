@@ -1,0 +1,25 @@
+{% extends "employee/base.html" %}
+
+
+{% block content %}
+    <div class="listing">
+        <div class="action-bar">
+            <form action="{% url 'products-list' %}" method="get">
+                <input name="text-search" type="text" placeholder="Search...">
+            </form>
+            <a href="...">Add product</a>
+        </div>
+
+        <ul>
+            {% for product in object_list %}
+                <li>
+                    {{ product.name }}
+                    <div class="buttons">
+                        <a href="...">Details</a> <!-- TODO -->
+                        <a href="{% url 'products-details'  product.id %}">View as Guest</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

@@ -137,7 +137,7 @@ AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
 
 MEDIA_ROOT = "/media/"
 STATIC_URL = "/static/"
-LOGIN_REDIRECT_URL = "/dashboard"
+LOGIN_REDIRECT_URL = "/employee/dashboard"
 LOGOUT_REDIRECT_URL = "/"
 LOGIN_URL = "/login"
 
