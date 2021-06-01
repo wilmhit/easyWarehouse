@@ -1,0 +1,18 @@
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+ul li{
+    margin: 15px 0;
+    border: 1px solid white;
+}
+
+ul li a{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1.5em;
+}
