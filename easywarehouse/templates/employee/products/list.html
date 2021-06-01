@@ -15,8 +15,8 @@
                 <li>
                     {{ product.name }}
                     <div class="buttons">
-                        <a href="...">Details</a> <!-- TODO -->
-                        <a href="{% url 'products-details'  product.id %}">View as Guest</a>
+                        <a href="{% url 'products-details'  product.id %}">Details</a> <!-- TODO -->
+                        <a href="{% url 'products-guest'  product.id %}">View as Guest</a>
                     </div>
                 </li>
             {% endfor %}
