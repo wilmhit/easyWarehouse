@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'product.css' %}">
+    <section class="product">
+        <div class="image-box">
+            {% for img in object.images.all %}
+                <img src="{{img.image.url}}" alt="Product image">
+            {% endfor %}
+        </div>
+        <div class="product-info">
+            <h1>{{ object.name }}</h1>
+            <h3>Description: </h3>
+            <p class="description">
+                {{object.description}}
+            </p>
+            <p class="tags">
+                {% for tag in object.tags %}
+                <a href="#">#{{tag}}</a>
+                {% endfor %}
+            </p>
+            <aside class="contact">
+                <h4>Any questions?</h4>
+                <form action="#">
+                    <label>
+                        Message:
+                        <input type="text" name="message" required>
+                    </label>
+                    <label>
+                        Email:
+                        <input type="email" name="email" required>
+                    </label>
+                    <input type="submit" value="Send">
+                </form>
+            </aside>
+        </div>
+    </section>
+{% endblock %}
