@@ -2,14 +2,18 @@
 {% load static %}
 
 {% block content %}
-  <link rel="stylesheet" type="text/css" href="{% static 'list.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'images.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'list.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'images.css' %}">
 
- <h1>Images</h1>
-    {% for image in object_list %}
-        <a href="{{ image.get_absolute_url }}">
-            <img src="{{ image.image.url }}" />
-        </a>
-    {% endfor %}
-<a href="{% url 'images-add' %}">Add new image</a>
+    <h1>Images</h1>
+    <ul>
+        {% for image in object_list %}
+            <li>
+                <a href="{{ image.get_absolute_url }}">
+                <img src="{{ image.image.url }}" alt="Image {{image.id}}" />
+            </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'images-add' %}">Add new image</a>
 {% endblock %}

@@ -35,7 +35,6 @@ class Product(models.Model):
     ean = models.CharField(
         max_length=13,
         validators=[RegexValidator(regex="[0-9]{13}", message="EAN can contain only numbers")],
-        default="0000000000000",
     )
 
     def __str__(self):
