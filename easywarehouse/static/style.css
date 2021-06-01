@@ -41,7 +41,8 @@ header h1 {
     cursor: default;
     color: var(--text);
 }
-header > a {
+
+header>a {
     text-decoration: none;
 }
 
@@ -98,6 +99,7 @@ label {
     justify-content: space-between;
     align-items: center;
 }
+
 label * {
     margin: 0 10px;
 }
@@ -140,6 +142,7 @@ label * {
 .user-menu {
     position: relative;
 }
+
 .user-menu a {
     color: var(--color);
     position: absolute;
@@ -149,9 +152,11 @@ label * {
     text-align: center;
     display: none;
 }
+
 .user-menu:hover span {
     opacity: 0;
 }
+
 .user-menu:hover a {
     display: unset;
 }
