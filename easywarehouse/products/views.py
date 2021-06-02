@@ -1,8 +1,6 @@
 import json
 
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
@@ -11,6 +9,7 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from .documents import ProductDocument
 from .forms import ProductForm
 from .models import Product
+
 
 # Guest views
 
@@ -57,16 +56,19 @@ class GuestProductDetails(DetailView, ProductAvailabilityMixin):
         context["product_with_ratio"] = self.get_ratio_json(context["object"])
         return context
 
+
 # Employee views
+
 
 class ProductDetails(LoginRequiredMixin, GuestProductDetails):
     template_name = "employee/products/details.html"
 
+
 class ListProducts(GuestListProducts):
     template_name = "employee/products/search.html"
 
-    def get_queryset(self):
-       return super().get_queryset(default_text_query="*")
+    def get_queryset(self, default_text_query: str = "*"):
+        return super().get_queryset(default_text_query)
 
 
 class AddProduct(LoginRequiredMixin, CreateView):

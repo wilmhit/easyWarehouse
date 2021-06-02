@@ -1,34 +1,25 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "employee/base.html" %}
 
-{% block extra_head %}
-    <link rel="stylesheet" type="text/css" href="{% static 'product_list.css' %}">
-    {{ products_with_ratios|json_script:"product-ratios" }}
-    <script src={% static "script/availabilityColors.js" %}></script>
-{% endblock %}
 
 {% block content %}
-    <h1>Products List</h1>
+    <div class="listing">
+        <div class="action-bar">
+            <form action="{% url 'products-list' %}" method="get">
+                <input name="text-search" type="text" placeholder="Search...">
+            </form>
+            <a href="{% url 'products-add' %}">Add product</a>
+        </div>
 
-    <form action="{% url 'products-list' %}" method="get">
-        <input name="text-search" type="text" placeholder="Search...">
-    </form>
-
-    <ul class="product-list">
-        {% for product in object_list %}
-            <li id="{{ product.public_id }}" class="product">
-                <a href="{% url "products-details"  product.id %}">
-                    <img src="{{ product.main_image_url }}" alt="{{ product.name }} photo">
-                    <p>{{ product.name }}</p>
-                    <div class="availability-bar-outer">
-                        <div class="availability-bar-inner"></div>
+        <ul>
+            {% for product in object_list %}
+                <li>
+                    {{ product.name }}
+                    <div class="buttons">
+                        <a href="{% url 'products-details'  product.id %}">Details</a> <!-- TODO -->
+                        <a href="{% url 'products-guest'  product.id %}">View as Guest</a>
                     </div>
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
-
-    <script>
-        setAvailabilityBarsOfProducts();
-    </script>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
