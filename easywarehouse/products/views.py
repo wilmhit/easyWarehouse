@@ -27,7 +27,7 @@ def dashboard(request):
 
 class ProductAvailabilityMixin:
     @staticmethod
-    def _get_ratio_json(product: Product) -> str:
+    def get_ratio_json(product: Product) -> str:
         return json.dumps(
             {
                 "id": str(product.public_id),
@@ -50,7 +50,7 @@ class ListProducts(LoginRequiredMixin, ListView, ProductAvailabilityMixin):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(object_list=object_list, **kwargs)
-        products_with_ratios = [self._get_ratio_json(p) for p in context["object_list"]]
+        products_with_ratios = [self.get_ratio_json(p) for p in context["object_list"]]
         context["products_with_ratios"] = products_with_ratios
         return context
 
@@ -61,7 +61,7 @@ class ProductDetails(LoginRequiredMixin, DetailView, ProductAvailabilityMixin):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["product_with_ratio"] = self._get_ratio_json(context["object"])
+        context["product_with_ratio"] = self.get_ratio_json(context["object"])
         return context
 
 

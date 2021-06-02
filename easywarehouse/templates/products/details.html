@@ -4,7 +4,7 @@
 {% block extra_head %}
     <link rel="stylesheet" type="text/css" href="{% static 'product.css' %}">
     {{ product_with_ratio|json_script:"product-ratio" }}
-    <script src={% static 'script/availabilityColors.js' %}></script>
+    <script src={% static "script/availabilityColors.js" %}></script>
 {% endblock %}
 
 {% block content %}
@@ -49,7 +49,6 @@
     </section>
 
     <script>
-        // JS please
         const product = JSON.parse(
             JSON.parse(document.getElementById("product-ratio").textContent)
         );

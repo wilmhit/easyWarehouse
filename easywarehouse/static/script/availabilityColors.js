@@ -1,6 +1,6 @@
 function getAvailabilityColor(value){
-    const hue = (value*100).toString(10);
-    return ["hsl(",hue,",100%,50%)"].join("");
+    const hue = (value*100).toString(10)
+    return `hsl(${hue},100%, 50%)`;
 }
 
 function setAvailabilityBar(id, ratio) {

@@ -4,7 +4,7 @@
 {% block extra_head %}
     <link rel="stylesheet" type="text/css" href="{% static 'product_list.css' %}">
     {{ products_with_ratios|json_script:"product-ratios" }}
-    <script src={% static 'script/availabilityColors.js' %}></script>
+    <script src={% static "script/availabilityColors.js" %}></script>
 {% endblock %}
 
 {% block content %}
