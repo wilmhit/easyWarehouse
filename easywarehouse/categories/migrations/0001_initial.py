@@ -8,6 +8,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('products', '0009_auto_20210530_1532'),
     ]
 
     operations = [

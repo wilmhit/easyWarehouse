@@ -1,6 +1,6 @@
 [
   {
-    "model": "products.image",
+    "model": "images.image",
     "pk": 1,
     "fields": {
       "image": "T05010_10.jpeg",
@@ -8,7 +8,7 @@
     }
   },
   {
-    "model": "products.image",
+    "model": "images.image",
     "pk": 2,
     "fields": {
       "image": "440px-100inchHooker.jpeg",
@@ -16,7 +16,7 @@
     }
   },
   {
-    "model": "products.image",
+    "model": "images.image",
     "pk": 3,
     "fields": {
       "image": "440px-Guide_Book_of_the_Panama_California_Exposition.jpeg",
@@ -24,7 +24,7 @@
     }
   },
   {
-    "model": "products.image",
+    "model": "images.image",
     "pk": 4,
     "fields": {
       "image": "440px-MetalwateringcansDec08.jpeg",
@@ -32,7 +32,7 @@
     }
   },
   {
-    "model": "products.image",
+    "model": "images.image",
     "pk": 5,
     "fields": {
       "image": "1280px-Pescia_museo_del_bonsai_punica_granatum_stile_moyogi_eretto_informale_con_frutti.jpeg",
@@ -40,7 +40,7 @@
     }
   },
   {
-    "model": "products.image",
+    "model": "images.image",
     "pk": 6,
     "fields": {
       "image": "Claw-hammer.jpeg",
@@ -48,7 +48,7 @@
     }
   },
   {
-    "model": "products.image",
+    "model": "images.image",
     "pk": 7,
     "fields": {
       "image": "Photo-CarBattery.jpeg",
@@ -56,7 +56,7 @@
     }
   },
   {
-    "model": "products.image",
+    "model": "images.image",
     "pk": 8,
     "fields": {
       "image": "Football_Pallo_valmiina-cropped.jpeg",
@@ -64,7 +64,7 @@
     }
   },
   {
-    "model": "products.image",
+    "model": "images.image",
     "pk": 9,
     "fields": {
       "image": "440px-NCTR_Intern_Claire_Boyle_15558843862.jpeg",
@@ -72,7 +72,7 @@
     }
   },
   {
-    "model": "products.image",
+    "model": "images.image",
     "pk": 10,
     "fields": {
       "image": "Hiking_shoes_Lowa.jpeg",
@@ -80,70 +80,70 @@
     }
   },
   {
-    "model": "products.category",
+    "model": "categories.category",
     "pk": 1,
     "fields": {
       "name": "Art"
     }
   },
   {
-    "model": "products.category",
+    "model": "categories.category",
     "pk": 2,
     "fields": {
       "name": "Nature"
     }
   },
   {
-    "model": "products.category",
+    "model": "categories.category",
     "pk": 3,
     "fields": {
       "name": "Sport"
     }
   },
   {
-    "model": "products.category",
+    "model": "categories.category",
     "pk": 4,
     "fields": {
       "name": "Outdoor"
     }
   },
   {
-    "model": "products.category",
+    "model": "categories.category",
     "pk": 5,
     "fields": {
       "name": "Garden"
     }
   },
   {
-    "model": "products.category",
+    "model": "categories.category",
     "pk": 6,
     "fields": {
       "name": "Education"
     }
   },
   {
-    "model": "products.category",
+    "model": "categories.category",
     "pk": 7,
     "fields": {
       "name": "Travel"
     }
   },
   {
-    "model": "products.category",
+    "model": "categories.category",
     "pk": 8,
     "fields": {
       "name": "Work"
     }
   },
   {
-    "model": "products.category",
+    "model": "categories.category",
     "pk": 9,
     "fields": {
       "name": "Car"
     }
   },
   {
-    "model": "products.category",
+    "model": "categories.category",
     "pk": 10,
     "fields": {
       "name": "Science"

@@ -37,7 +37,9 @@ class ProductDetails(DetailView):
 # Employee views
 
 
-class ListProducts(ProductSearch):
+class ListProducts(LoginRequiredMixin, ProductSearch):
+    template_name = "employee/products/list.html"
+
     def get_queryset(self):
         query = self.request.GET.get("text-search", "*")
         matched_products = ProductDocument.search().query(
