@@ -12,17 +12,11 @@ from .documents import ProductDocument
 from .forms import ProductForm
 from .models import Product
 
+# Guest views
+
 
 def index(request):
     return render(request, "index.html")
-
-
-@login_required
-def dashboard(request):
-    return HttpResponse("Hello employee. You are logged in")
-
-
-# Products
 
 
 class ProductAvailabilityMixin:
@@ -36,13 +30,12 @@ class ProductAvailabilityMixin:
         )
 
 
-class ListProducts(LoginRequiredMixin, ListView, ProductAvailabilityMixin):
+class GuestListProducts(ListView, ProductAvailabilityMixin):
     template_name = "products/list.html"
     models = Product
-    queryset = Product.objects.all()
 
-    def get_queryset(self):
-        query = self.request.GET.get("text-search", "")
+    def get_queryset(self, default_text_query: str = ""):
+        query = self.request.GET.get("text-search", default_text_query)
         matched_products = ProductDocument.search().query(
             "simple_query_string", query=query, fields=["name^5", "description"]
         )
@@ -55,8 +48,8 @@ class ListProducts(LoginRequiredMixin, ListView, ProductAvailabilityMixin):
         return context
 
 
-class ProductDetails(LoginRequiredMixin, DetailView, ProductAvailabilityMixin):
-    template_name = "products/details.html"
+class GuestProductDetails(DetailView, ProductAvailabilityMixin):
+    template_name = "products_details.html"
     model = Product
 
     def get_context_data(self, **kwargs):
@@ -64,21 +57,32 @@ class ProductDetails(LoginRequiredMixin, DetailView, ProductAvailabilityMixin):
         context["product_with_ratio"] = self.get_ratio_json(context["object"])
         return context
 
+# Employee views
+
+class ProductDetails(LoginRequiredMixin, GuestProductDetails):
+    template_name = "employee/products/details.html"
+
+class ListProducts(GuestListProducts):
+    template_name = "employee/products/search.html"
+
+    def get_queryset(self):
+       return super().get_queryset(default_text_query="*")
+
 
 class AddProduct(LoginRequiredMixin, CreateView):
-    template_name = "products/add.html"
+    template_name = "employee/products/add.html"
     form_class = ProductForm
     success_url = reverse_lazy("products-list")
 
 
 class UpdateProduct(LoginRequiredMixin, UpdateView):
-    template_name = "products/update.html"
+    template_name = "employee/products/update.html"
     form_class = ProductForm
     success_url = reverse_lazy("products-list")
     model = Product
 
 
 class DeleteProduct(LoginRequiredMixin, DeleteView):
-    template_name = "products/delete.html"
+    template_name = "employee/products/delete.html"
     success_url = reverse_lazy("products-list")
     model = Product

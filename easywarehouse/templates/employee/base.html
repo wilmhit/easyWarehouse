@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'employee.css' %}">
+{% endblock %}
+
+
+{% block menu %}
+    <a href="{% url 'categories-list' %}">Category management</a>
+    <a href="{% url 'images-list' %}">Image management</a>
+    <a href="{% url 'products-list' %}">Product management</a>
+    <a href="{% url 'products-list' %}">Issue/Accept</a> <!-- TODO -->
+    <a href="{% url 'products-list' %}">Settings</a> <!-- TODO -->
+{% endblock %}

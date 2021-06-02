@@ -8,23 +8,23 @@ from .models import Image
 
 
 class ImageDetails(LoginRequiredMixin, DetailView):
-    template_name = "images/details.html"
+    template_name = "employee/images/details.html"
     model = Image
 
 
 class ListImages(LoginRequiredMixin, ListView):
-    template_name = "images/list.html"
+    template_name = "employee/images/list.html"
     model = Image
     queryset = Image.objects.all()
 
 
 class DeleteImage(LoginRequiredMixin, DeleteView):
-    template_name = "images/delete.html"
+    template_name = "employee/images/delete.html"
     model = Image
     success_url = reverse_lazy("images-list")
 
 
 class AddImage(LoginRequiredMixin, CreateView):
-    template_name = "images/add.html"
+    template_name = "employee/images/add.html"
     form_class = ImageForm
     models = Image

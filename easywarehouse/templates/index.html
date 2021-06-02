@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form class="search-bar">
-    <input type="search" name="search_input">
+<form action="{% url 'search' %}" class="search-bar">
+    <input type="search" name="text-search">
     <input type="submit" value="Search">
 </form>
 {% endblock %}

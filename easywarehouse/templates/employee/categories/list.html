@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'list.css' %}">
+  <h1>Categories List</h1>
+    <ul>
+      {% for category in object_list %}
+        <li>
+          <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  <a href="{% url "categories-add" %}">Add new category</a>
+{% endblock %}

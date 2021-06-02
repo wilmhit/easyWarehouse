@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'list.css' %}">
+  <h1>{{ object.name }}</h1>
+    <ul>
+        <li>
+          <a href="{% url 'categories-delete' object.id %}">Delete the category</a>
+        </li>
+        <li>
+          <a href="{% url 'categories-update' object.id %}">Update the category</a>
+        </li>
+    </ul>
+{% endblock %}

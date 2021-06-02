@@ -9,4 +9,16 @@ class ProductForm(ModelForm):
 
     class Meta:
         model = models.Product
-        fields = ["category", "name", "tags", "description"]
+        fields = ["category", "name", "good_availability_threshold", "ean", "tags", "description"]
+
+
+class CategoryForm(ModelForm):
+    class Meta:
+        model = models.Category
+        fields = ["name"]
+
+
+class ImageForm(ModelForm):
+    class Meta:
+        model = models.Image
+        fields = ["image", "product"]
