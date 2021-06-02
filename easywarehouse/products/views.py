@@ -63,7 +63,7 @@ class ProductDetails(LoginRequiredMixin, GuestProductDetails):
     template_name = "employee/products/details.html"
 
 
-class ListProducts(GuestListProducts):
+class ListProducts(LoginRequiredMixin, GuestListProducts):
     template_name = "employee/products/list.html"
 
     def get_queryset(self, default_text_query: str = "*"):
