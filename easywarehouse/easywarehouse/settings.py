@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "images",
     "employee",
     "categories",
+    "django_extensions"
 ]
 
 MIDDLEWARE = [

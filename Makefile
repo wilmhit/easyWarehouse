@@ -1,4 +1,4 @@
-PYMANAGE = python easywarehouse/manage.py
+PYMANAGE = poetry run python easywarehouse/manage.py
 
 format:
 	poetry run black easywarehouse --exclude migrations
@@ -28,3 +28,6 @@ loaddata:
 
 flush:
 	$(PYMANAGE) flush --noinput
+
+resetdb:
+	$(PYMANAGE) reset_db

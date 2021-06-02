@@ -30,7 +30,7 @@ class ProductAvailabilityMixin:
 
 
 class GuestListProducts(ListView, ProductAvailabilityMixin):
-    template_name = "products/list.html"
+    template_name = "product_search.html"
     models = Product
 
     def get_queryset(self, default_text_query: str = ""):
@@ -48,7 +48,7 @@ class GuestListProducts(ListView, ProductAvailabilityMixin):
 
 
 class GuestProductDetails(DetailView, ProductAvailabilityMixin):
-    template_name = "products_details.html"
+    template_name = "product_details.html"
     model = Product
 
     def get_context_data(self, **kwargs):
@@ -65,7 +65,7 @@ class ProductDetails(LoginRequiredMixin, GuestProductDetails):
 
 
 class ListProducts(GuestListProducts):
-    template_name = "employee/products/search.html"
+    template_name = "employee/products/list.html"
 
     def get_queryset(self, default_text_query: str = "*"):
         return super().get_queryset(default_text_query)
