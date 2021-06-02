@@ -152,3 +152,14 @@ label * {
 .user-menu:hover a {
     display: unset;
 }
+
+.availability-bar-outer {
+    background-color: grey;
+    width: 100px;
+    height: 20px;
+}
+
+.availability-bar-inner {
+    /* This style is dynamically adjusted with JS */
+    height: 100%;
+}

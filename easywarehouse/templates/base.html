@@ -6,7 +6,9 @@
     <title>
         {% if title %} {{ title }} {% else %} EasyWarehouse {% endif %}
     </title>
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"> {% block style %} {% endblock %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    {% block style %} {% endblock %}
+    {% block extra_head %} {% endblock %}
     <meta charset="utf-8">
 </head>
 

@@ -1,22 +1,36 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block content %}
+{% block extra_head %}
     <link rel="stylesheet" type="text/css" href="{% static 'product_list.css' %}">
+    {{ products_with_ratios|json_script:"product-ratios" }}
+    <script src={% static 'script/availabilityColors.js' %}></script>
+{% endblock %}
 
-    <!-- TODO make the search bar the same as on index page -->
-    <form action="{% url 'search' %}" method="get">
+{% block content %}
+    <h1>Products List</h1>
+
+    <form action="{% url 'products-list' %}" method="get">
         <input name="text-search" type="text" placeholder="Search...">
     </form>
 
     <ul class="product-list">
         {% for product in object_list %}
             <li>
+            <li id="{{ product.public_id }}" class="product">
                 <a href="{% url 'products-guest'  product.id %}">
                     <img src="{{ product.main_image_url }}" alt="{{ product.name }} photo">
                     <div>{{ product.name }}</div>
+                    <p>{{ product.name }}</p>
+                    <div class="availability-bar-outer">
+                        <div class="availability-bar-inner"></div>
+                    </div>
                 </a>
             </li>
         {% endfor %}
     </ul>
+
+    <script>
+        setAvailabilityBarsOfProducts();
+    </script>
 {% endblock %}

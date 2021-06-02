@@ -1,13 +1,15 @@
-ul.product-list{
+ul.product-list {
     list-style: none;
 }
 
-ul.product-list li{
+.product {
     margin: 15px 0;
     height: 200px;
+    position: relative;
+    overflow: hidden;
 }
 
-ul.product-list li a{
+.product a {
     display: flex;
     flex-direction: row;
     border: 1px solid white;
@@ -17,16 +19,21 @@ ul.product-list li a{
     height: 100%;
 }
 
-ul.product-list li div{
-    margin: auto 0;
-    margin-left: 5%;
+.product p {
+    margin: auto 0 auto 5%;
 }
 
-ul.product-list li img{
+.product img {
     width: 30%;
     height: 100%;
     object-fit: contain;
     display: block;
     padding: 5px;
     border-right: 1px solid white;
+}
+
+.product .availability-bar-outer {
+    position: absolute;
+    right: 25px;
+    margin-top: 30px;
 }

@@ -20,7 +20,7 @@ section.product .image-box img{
     margin: 5px;
 }
 
-section.product  .product-info{
+.product-info{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,13 +28,24 @@ section.product  .product-info{
     margin-left: 2em;
 }
 
-section.product  .product-info .tags a{
+.product-info .tags a{
     text-decoration: none;
     color: var(--text);
 }
 
-section.product  .product-info .description{
+.product-info .description{
     margin-left: 10px;
+}
+
+.product-info-top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product .availability-bar-outer {
+    right: 25px;
+    margin-top: 30px;
 }
 
 aside.contact form{
@@ -54,3 +65,4 @@ aside.contact form input[type=submit]{
     width: 50%;
     margin: 0 auto;
 }
+
