@@ -10,7 +10,6 @@ from .documents import ProductDocument
 from .forms import ProductForm
 from .models import Product
 
-
 # Guest views
 
 
