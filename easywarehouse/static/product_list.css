@@ -5,6 +5,8 @@ ul.product-list {
 .product {
     margin: 15px 0;
     height: 200px;
+    position: relative;
+    overflow: hidden;
 }
 
 .product a {
