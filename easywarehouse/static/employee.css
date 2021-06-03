@@ -46,7 +46,8 @@ nav a:focus {
 .action-bar * {
     margin: 0 10px;
 }
-.action-bar a {
+.action-bar a,
+.buttons a {
     color: var(--text);
     text-decoration: none;
     background: var(--inactive-element);
@@ -56,7 +57,9 @@ nav a:focus {
     opacity: 0.6;
 }
 .action-bar a:hover,
-.action-bar a:focus {
+.action-bar a:focus,
+.buttons a:hover,
+.buttons a:focus {
     opacity: 1;
     text-decoration: underline;
     background: var(--active-element);
