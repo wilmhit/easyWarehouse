@@ -21,12 +21,16 @@
         </div>
         {% if user.is_authenticated %}
         <div class="user-menu">
-            <span>Logged in as <b>{{ user.username }}</b></span>
-            <a href="/employee/dashboard">Dashboard</a>
-            <a href="/logout">Log out</a>
+            <div class="visible">
+                <span>Logged in as <b>{{ user.username }}</b></span>
+            </div>
+            <div class="on-hover">
+                <a href="/employee/dashboard">Dashboard</a>
+                <a href="/logout">Log out</a>
+            </div>
         </div>
         {% endif %}
-    </header>
+        </header>
     <div class="container">
         <nav>
             {% block menu %} {% endblock %}
