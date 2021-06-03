@@ -1,6 +1,7 @@
 img{
-    max-height: 50vh;
-    max-width: 80vh;
+    max-height: 500px;
+    max-width: 500px;
+    object-fit: contain;
 }
 
 ul{
@@ -20,5 +21,6 @@ ul li img{
     margin: 5px;
     display: flex;
     justify-content: center;
-    max-width: 30vh;
+    width: 300px;
+    height: 300px;
 }
