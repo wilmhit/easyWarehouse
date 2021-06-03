@@ -1,4 +1,26 @@
 img{
-    height: 50vh;
-    max-width: 80vh;
+    max-height: 500px;
+    max-width: 500px;
+    object-fit: contain;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+ul li{
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+ul li img{
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
 }

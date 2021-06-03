@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'images.css' %}">
 
     <h1>Images</h1>
+    <a href="{% url 'images-add' %}"><input type="button" value="Add new image"/></a>
     <ul>
         {% for image in object_list %}
             <li>
@@ -15,5 +16,4 @@
             </li>
         {% endfor %}
     </ul>
-    <a href="{% url 'images-add' %}">Add new image</a>
 {% endblock %}
