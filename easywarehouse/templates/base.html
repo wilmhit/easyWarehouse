@@ -1,4 +1,5 @@
 {% load static %}
+{% load url_replace %}
 <!DOCTYPE html>
 <html>
 
@@ -13,13 +14,13 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <a href="{% url 'index' %}">
-                <h1>EasyWarehouse</h1>
-            </a>
-        </div>
-        {% if user.is_authenticated %}
+<header>
+    <div class="logo">
+        <a href="{% url 'index' %}">
+            <h1>EasyWarehouse</h1>
+        </a>
+    </div>
+    {% if user.is_authenticated %}
         <div class="user-menu">
             <div class="visible">
                 <span>Logged in as <b>{{ user.username }}</b></span>
@@ -29,19 +30,32 @@
                 <a href="/logout">Log out</a>
             </div>
         </div>
-        {% endif %}
-        </header>
-    <div class="container">
-        <nav>
-            {% block menu %} {% endblock %}
-        </nav>
-        <main>
-            {% block content %} {% endblock %}
-        </main>
-    </div>
-    <footer>
-        {% block footer %} {% endblock %}
-    </footer>
+    {% endif %}
+</header>
+<div class="container">
+    <nav>
+        {% block menu %} {% endblock %}
+    </nav>
+    <main>
+        {% block content %} {% endblock %}
+        {% block pagination %}
+            {% if page_obj %}
+                <div class="pagination-buttons">
+                    {% if page_obj.has_next %}
+                        <a href="?{% url_replace page=page_obj.next_page_number %}">next</a>
+                        <a href="?{% url_replace page=page_obj.paginator.num_pages %}">last</a>
+                    {% endif %}
+                    {% if page_obj.has_previous %}
+                        <a href="?{% url_replace page=page_obj.previous_page_number %}">previous</a>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endblock %}
+    </main>
+</div>
+<footer>
+    {% block footer %} {% endblock %}
+</footer>
 </body>
 
 </html>
