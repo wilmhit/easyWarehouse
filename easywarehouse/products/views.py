@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
-from .documents import ProductDocument, PaginableDocumentSearchResults
+from .documents import PaginableDocumentSearchResults, ProductDocument
 from .forms import ProductForm
 from .models import Product
 
@@ -36,7 +36,7 @@ class GuestListProducts(ListView, ProductAvailabilityMixin):
     def get_queryset(self, default_text_query: str = ""):
         query = self.request.GET.get("text-search", default_text_query)
         matched_products = ProductDocument.search().query(
-            "simple_query_string", query=query, fields=["name^5", "description"]
+            "simple_query_string", query=query, fields=["name^5", "description", "category_name"]
         )
         return PaginableDocumentSearchResults(matched_products)
 

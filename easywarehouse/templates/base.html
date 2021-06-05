@@ -38,19 +38,17 @@
     </nav>
     <main>
         {% block content %} {% endblock %}
-        {% block pagination %}
-            {% if page_obj %}
-                <div class="pagination-buttons">
-                    {% if page_obj.has_next %}
-                        <a href="?{% url_replace page=page_obj.next_page_number %}">next</a>
-                        <a href="?{% url_replace page=page_obj.paginator.num_pages %}">last</a>
-                    {% endif %}
-                    {% if page_obj.has_previous %}
-                        <a href="?{% url_replace page=page_obj.previous_page_number %}">previous</a>
-                    {% endif %}
-                </div>
-            {% endif %}
-        {% endblock %}
+        {% if page_obj %}
+            <div class="pagination-buttons">
+                {% if page_obj.has_next %}
+                    <a href="?{% url_replace page=page_obj.next_page_number %}">next</a>
+                    <a href="?{% url_replace page=page_obj.paginator.num_pages %}">last</a>
+                {% endif %}
+                {% if page_obj.has_previous %}
+                    <a href="?{% url_replace page=page_obj.previous_page_number %}">previous</a>
+                {% endif %}
+            </div>
+        {% endif %}
     </main>
 </div>
 <footer>
