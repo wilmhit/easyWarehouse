@@ -37,3 +37,5 @@ removecontainers:
 
 removevolumes:
 	docker volume rm easywarehouse_es_data easywarehouse_psql_data easywarehouse_pgadmin_data
+
+removealldocker: removecontainers removevolumes

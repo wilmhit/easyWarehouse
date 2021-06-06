@@ -3,6 +3,7 @@ import typing
 from django.utils.functional import LazyObject
 from django_elasticsearch_dsl import Document
 from django_elasticsearch_dsl.registries import registry
+from django_elasticsearch_dsl.search import Search
 
 from .models import Product
 
@@ -20,7 +21,7 @@ class ProductDocument(Document):
 
 
 class PaginableDocumentSearchResults(LazyObject):
-    def __init__(self, search_object):
+    def __init__(self, search_object: Search):
         super().__init__()
         self._wrapped = search_object
 
