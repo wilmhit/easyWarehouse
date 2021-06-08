@@ -5,6 +5,7 @@
     <form  method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form }}
+        <br/>
         <input type="submit" value="Submit">
     </form>
 {% endblock %}

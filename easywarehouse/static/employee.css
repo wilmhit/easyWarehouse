@@ -66,6 +66,11 @@ nav a:focus {
     border: 1px solid var(--inactive-element);
 }
 
+.pagination-buttons {
+    width: max(40%, max-content);
+    padding: 0 30px;
+}
+
 .listing {
     padding-top: 30px;
     width: 85%;
@@ -107,14 +112,3 @@ nav a:focus {
     opacity: 1;
 }
 
-.pagination-buttons{
-    margin-top: 10px;
-}
-.pagination-buttons a{
-    text-decoration: None;
-    font-size: 1.1rem;
-    padding: 3px;
-    margin: 5px;
-    border: 1px solid white;
-    color: white;
-}
