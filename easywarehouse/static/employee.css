@@ -40,14 +40,15 @@ nav a:focus {
     background: var(--active-element);
     margin: 10px;
     border-radius: 20px;
-    padding: 5px 50px;
+    padding: 0px 50px;
     width: 100%;
 }
 .action-bar * {
-    margin: 0 10px;
+    margin: 5px 10px;
 }
 .action-bar a,
-.buttons a {
+.buttons a,
+.image-page a {
     color: var(--text);
     text-decoration: none;
     background: var(--inactive-element);
@@ -59,7 +60,9 @@ nav a:focus {
 .action-bar a:hover,
 .action-bar a:focus,
 .buttons a:hover,
-.buttons a:focus {
+.buttons a:focus,
+.image-page a:hover,
+.image-page a:focus {
     opacity: 1;
     text-decoration: underline;
     background: var(--active-element);
@@ -68,7 +71,6 @@ nav a:focus {
 
 .pagination-buttons {
     width: max(40%, max-content);
-    padding: 0 30px;
 }
 
 .listing {
@@ -79,7 +81,6 @@ nav a:focus {
     background: var(--active-element);
     margin: 10px;
     border-radius: 20px;
-    padding: 5px 0;
     width: 100%;
     list-style: none;
     overflow: hidden;
@@ -138,5 +139,24 @@ form input[type="submit"] {
     gap: 10px;
 }
 .select-column input[type="submit"] {
+    margin: 0;
+    grid-column: span 2;
+}
+
+.image-page {
+    width: 80%;
+    display: grid;
+    grid-template-columns: auto 400px;
+    gap: 20px;
+}
+.image-page img {
+    max-height: 600px;
+    grid-row: span 10;
+    object-fit: contain;
+}
+.image-page * {
+    font-size: 1.5rem;
+    overflow-wrap: break-word;
+    padding: 0;
     margin: 0;
 }
