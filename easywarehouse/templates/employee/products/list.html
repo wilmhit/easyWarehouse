@@ -1,5 +1,4 @@
-{% extends "employee/base.html" %}
-
+{% extends "employee/base_list.html" %}
 
 {% block content %}
     <div class="listing">
@@ -15,7 +14,7 @@
                 <li>
                     {{ product.name }}
                     <div class="buttons">
-                        <a href="{% url 'products-details'  product.id %}">Details</a> <!-- TODO -->
+                        <a href="{% url 'products-details'  product.id %}">Details</a>
                         <a href="{% url 'products-guest'  product.id %}">View as Guest</a>
                     </div>
                 </li>
