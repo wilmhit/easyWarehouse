@@ -13,8 +13,8 @@
         <li>
           {{ category.name }}
           <div class="buttons">
-            <a href="{% url 'categories-delete' category.id %}">Update</a>
-            <a href="{% url 'categories-update' category.id %}">Delete</a>
+            <a href="{% url 'categories-update' category.id %}">Update</a>
+            <a href="{% url 'categories-delete' category.id %}">Delete</a>
           </div>
         </li>
       {% endfor %}
