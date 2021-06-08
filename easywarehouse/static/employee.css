@@ -112,3 +112,9 @@ nav a:focus {
     opacity: 1;
 }
 
+form label {
+    padding: 10px 10px 0;
+}
+form select {
+    width: 100%;
+}
