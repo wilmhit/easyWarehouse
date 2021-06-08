@@ -107,10 +107,10 @@ nav a:focus {
     opacity: 1;
 }
 
-.pagination-buttons{
+.pagination-buttons {
     margin-top: 10px;
 }
-.pagination-buttons a{
+.pagination-buttons a {
     text-decoration: None;
     font-size: 1.1rem;
     padding: 3px;
@@ -123,4 +123,10 @@ nav a:focus {
 }
 .delete-form input{
     width: 400px;
+}
+form label {
+    padding: 10px 10px 0;
+}
+form select {
+    width: 100%;
 }
