@@ -10,8 +10,6 @@ section.product .image-box{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    border: 1px solid white;
-    border-radius: 10%;
     padding: 10px;
     margin: 10px;
     text-align: center;

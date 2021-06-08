@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'product.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'list.css' %}">
     <section class="product">
         <div class="image-box">
             {% for img in object.images.all %}
@@ -22,6 +23,14 @@
                 <a href="#">#{{tag}}</a>
                 {% endfor %}
             </p>
+            <ul>
+                <li>
+                  <a href="{% url 'products-delete' object.id %}">Delete the product</a>
+                </li>
+                <li>
+                  <a href="{% url 'products-update' object.id %}">Update the product</a>
+                </li>
+            </ul>
         </div>
     </section>
 {% endblock %}
