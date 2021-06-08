@@ -15,6 +15,7 @@ class ImageDetails(LoginRequiredMixin, DetailView):
 class ListImages(LoginRequiredMixin, ListView):
     template_name = "employee/images/list.html"
     model = Image
+    paginate_by = 10
     queryset = Image.objects.all()
 
 
