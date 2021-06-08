@@ -78,6 +78,7 @@ main {
 }
 
 input {
+    width: 100%;
     border-radius: 5px;
     border: 2px solid var(--far-background);
     padding: 0.5em;
