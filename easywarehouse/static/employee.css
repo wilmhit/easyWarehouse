@@ -118,7 +118,12 @@ nav a:focus {
     border: 1px solid white;
     color: white;
 }
-
+.delete-form{
+    text-align: center;
+}
+.delete-form input{
+    width: 400px;
+}
 form label {
     padding: 10px 10px 0;
 }

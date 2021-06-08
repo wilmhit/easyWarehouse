@@ -2,10 +2,12 @@
 {% load static %}
 
 {% block content %}
-    <form method="post">
-        {% csrf_token %}
-        <p>Are you sure you want to delete "{{ object }}"?</p>
-        <input type="submit" value="Confirm">
-    </form>
-    <a href="{{ object.get_absolute_url }}"><input type="button" value="Cancel"/></a>
+    <div class="delete-form">
+        <form method="post">
+            {% csrf_token %}
+            <p>Are you sure you want to delete "{{ object }}"?</p>
+            <input type="submit" value="Confirm">
+        </form>
+        <a href="{{ object.get_absolute_url }}"><input type="button" value="Cancel"/></a>
+    </div>
 {% endblock %}
