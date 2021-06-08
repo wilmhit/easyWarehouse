@@ -115,6 +115,28 @@ nav a:focus {
 form label {
     padding: 10px 10px 0;
 }
-form select {
+form select,
+form textarea {
     width: 100%;
+    background: var(--inactive-element);
+    color: var(--element-text);
+    border: 1px solid var(--inactive-element);
+    border-radius: 5px;
+    padding: 4px;
+}
+form select:hover {
+    background: var(--active-element);
+}
+form input[type="submit"] {
+    margin-top: 20px;
+}
+
+.select-column {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: flex-start;
+    gap: 10px;
+}
+.select-column input[type="submit"] {
+    margin: 0;
 }
