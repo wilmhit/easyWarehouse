@@ -8,6 +8,6 @@
             <p>Are you sure you want to delete "{{ object }}"?</p>
             <input type="submit" value="Confirm">
         </form>
-        <a href="{{ object.get_absolute_url }}"><input type="button" value="Cancel"/></a>
+        <a href="{% url 'categories-list' %}"><input type="button" value="Cancel"/></a>
     </div>
 {% endblock %}
