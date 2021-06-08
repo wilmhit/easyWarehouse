@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'product.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'list.css' %}">
     <section class="product">
         <div class="image-box">
             {% for img in object.images.all %}
@@ -10,6 +11,9 @@
         </div>
         <div class="product-info">
             <h1>{{ object.name }}</h1>
+            <h3>Quantity: {{object.quantity}}</h3>
+            <h3>Good availability threshold: {{object.good_availability_threshold}}</h3>
+            <h3>EAN code: {{object.ean}}</h3>
             <h3>Description: </h3>
             <p class="description">
                 {{object.description}}
@@ -19,6 +23,14 @@
                 <a href="#">#{{tag}}</a>
                 {% endfor %}
             </p>
+            <ul>
+                <li>
+                  <a href="{% url 'products-delete' object.id %}">Delete the product</a>
+                </li>
+                <li>
+                  <a href="{% url 'products-update' object.id %}">Update the product</a>
+                </li>
+            </ul>
         </div>
     </section>
 {% endblock %}

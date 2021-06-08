@@ -6,9 +6,10 @@ section.product{
 }
 
 section.product .image-box{
-    display: block;
-    border: 1px solid white;
-    border-radius: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 10px;
     margin: 10px;
     text-align: center;
@@ -16,8 +17,15 @@ section.product .image-box{
 }
 
 section.product .image-box img{
-    width: 90%;
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: contain;
     margin: 5px;
+}
+
+section.product .image-box img:first-child{
+    max-width: 90%;
+    max-height: 500px;
 }
 
 .product-info{
