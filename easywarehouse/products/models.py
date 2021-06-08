@@ -19,7 +19,9 @@ class Product(models.Model):
     main_image_url = models.URLField(null=True, blank=True)
     ean = models.CharField(
         max_length=13,
-        validators=[RegexValidator(regex="[0-9]{13}", message="EAN can contain only numbers")],
+        validators=[
+            RegexValidator(regex="[0-9]+", message="The provided string is not a valid EAN.")
+        ],
     )
 
     def __str__(self):
