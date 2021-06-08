@@ -2,11 +2,9 @@
 {% load static %}
 
 {% block content %}
-    <form  method="post">
+    <form  method="post" class="select-column">
         {% csrf_token %}
         {{ form }}
-        <br>
         <input type="submit" value="Submit">
-        <a href="{% url 'products-list' %}"><input type="button" value="Cancel"/></a>
     </form>
 {% endblock %}

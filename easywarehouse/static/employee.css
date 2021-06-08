@@ -40,14 +40,15 @@ nav a:focus {
     background: var(--active-element);
     margin: 10px;
     border-radius: 20px;
-    padding: 5px 50px;
+    padding: 0px 50px;
     width: 100%;
 }
 .action-bar * {
-    margin: 0 10px;
+    margin: 5px 10px;
 }
 .action-bar a,
-.buttons a {
+.buttons a,
+.image-page a {
     color: var(--text);
     text-decoration: none;
     background: var(--inactive-element);
@@ -59,11 +60,17 @@ nav a:focus {
 .action-bar a:hover,
 .action-bar a:focus,
 .buttons a:hover,
-.buttons a:focus {
+.buttons a:focus,
+.image-page a:hover,
+.image-page a:focus {
     opacity: 1;
     text-decoration: underline;
     background: var(--active-element);
     border: 1px solid var(--inactive-element);
+}
+
+.pagination-buttons {
+    width: max(40%, max-content);
 }
 
 .listing {
@@ -74,7 +81,6 @@ nav a:focus {
     background: var(--active-element);
     margin: 10px;
     border-radius: 20px;
-    padding: 5px 0;
     width: 100%;
     list-style: none;
     overflow: hidden;
@@ -107,26 +113,57 @@ nav a:focus {
     opacity: 1;
 }
 
-.pagination-buttons {
-    margin-top: 10px;
-}
-.pagination-buttons a {
-    text-decoration: None;
-    font-size: 1.1rem;
-    padding: 3px;
-    margin: 5px;
-    border: 1px solid white;
-    color: white;
-}
 .delete-form{
     text-align: center;
 }
 .delete-form input{
     width: 400px;
 }
+
 form label {
     padding: 10px 10px 0;
 }
-form select {
+form select,
+form textarea {
     width: 100%;
+    background: var(--inactive-element);
+    color: var(--element-text);
+    border: 1px solid var(--inactive-element);
+    border-radius: 5px;
+    padding: 4px;
+}
+form select:hover {
+    background: var(--active-element);
+}
+form input[type="submit"] {
+    margin-top: 20px;
+}
+
+.select-column {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: flex-start;
+    gap: 10px;
+}
+.select-column input[type="submit"] {
+    margin: 0;
+    grid-column: span 2;
+}
+
+.image-page {
+    width: 80%;
+    display: grid;
+    grid-template-columns: auto 400px;
+    gap: 20px;
+}
+.image-page img {
+    max-height: 600px;
+    grid-row: span 10;
+    object-fit: contain;
+}
+.image-page * {
+    font-size: 1.5rem;
+    overflow-wrap: break-word;
+    padding: 0;
+    margin: 0;
 }

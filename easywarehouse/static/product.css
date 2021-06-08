@@ -57,8 +57,9 @@ section.product .image-box img:first-child{
 }
 
 aside.contact form{
-    display:flex;
-    flex-direction: column;
+    display:grid;
+    grid-template-columns: auto auto;
+    margin: 10px;
 }
 
 aside.contact form label input{
@@ -70,7 +71,6 @@ aside.contact form label input[type=text]{
 }
 
 aside.contact form input[type=submit]{
-    width: 50%;
-    margin: 0 auto;
+    grid-column: span 2;
 }
 
