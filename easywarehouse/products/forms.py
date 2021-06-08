@@ -17,5 +17,5 @@ class ProductForm(ModelForm):
             "ean",
             "tags",
             "description",
-            "main_image_url"
+            "main_image_url",
         ]
