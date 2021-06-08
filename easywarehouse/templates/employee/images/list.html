@@ -5,7 +5,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'list.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'images.css' %}">
 
-    <a href="{% url 'images-add' %}"><input type="button" value="Add new image"/></a>
+  <div class="action-bar">
+    <a href="{% url 'images-add' %}">Add new category</a>
+  </div>
 
     <ul>
         {% for image in object_list %}

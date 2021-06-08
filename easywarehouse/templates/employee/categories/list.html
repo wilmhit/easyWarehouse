@@ -4,7 +4,9 @@
 {% block content %}
   <link rel="stylesheet" type="text/css" href="{% static 'list.css' %}">
   <h1>Categories List</h1>
-  <a href="{% url "categories-add" %}">Add new category</a>
+  <div class="action-bar">
+    <a href="{% url 'categories-add' %}">Add new category</a>
+  </div>
     <ul>
       {% for category in object_list %}
         <li>
