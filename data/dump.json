@@ -80,6 +80,54 @@
     }
   },
   {
+    "model": "images.image",
+    "pk": 11,
+    "fields": {
+      "image": "Siam_lilacpoint.jpg",
+      "product": 15
+    }
+  },
+  {
+    "model": "images.image",
+    "pk": 12,
+    "fields": {
+      "image": "bat.jpg",
+      "product": 18
+    }
+  },
+  {
+    "model": "images.image",
+    "pk": 13,
+    "fields": {
+      "image": "25-gato_siames.jpeg",
+      "product": 15
+    }
+  },
+  {
+    "model": "images.image",
+    "pk": 14,
+    "fields": {
+      "image": "bonsai.jpeg",
+      "product": 6
+    }
+  },
+  {
+    "model": "images.image",
+    "pk": 15,
+    "fields": {
+      "image": "Bonsai-Ficus.jpg",
+      "product": 6
+    }
+  },
+  {
+    "model": "images.image",
+    "pk": 16,
+    "fields": {
+      "image": "MLA22LL.jpeg",
+      "product": 17
+    }
+  },
+  {
     "model": "categories.category",
     "pk": 1,
     "fields": {
@@ -150,6 +198,20 @@
     }
   },
   {
+    "model": "categories.category",
+    "pk": 11,
+    "fields": {
+      "name": "Cats"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": 12,
+    "fields": {
+      "name": "Electronics"
+    }
+  },
+  {
     "model": "products.product",
     "pk": 5,
     "fields": {
@@ -160,6 +222,7 @@
       "tags": "[\"handmade\", \"culture\"]",
       "description": "The Weeping Woman (French: Femme an pleurs) is an oil on canvas painting by Pablo Picasso, which he created in France in 1937. The painting depicts Dora Maar, Picasso's mistress and muse. The Weeping Woman was created at the end of a series of paintings that Picasso produced in response to the bombing of Guernica in the Spanish Civil War and is closely associated with the iconography in his painting Guernica. Picasso was intrigued with the subject of the weeping woman, and revisited the theme numerous times that year.[1] This painting, created on 26 October 1937,[2] was the most elaborate of the series. It has been housed in the collection of the Tate Modern in London since 1987.",
       "main_image_url": "https://s3.eu-central-1.amazonaws.com/django-media.bucket/media/T05010_10.jpeg",
+      "ean": "",
       "category": [
         1
       ]
@@ -176,6 +239,7 @@
       "tags": "[\"tree\", \"japan\"]",
       "description": "Bonsai (Japanese: 盆栽, lit. 'tray planting', pronounced [boɰ̃sai] (About this soundlisten))[1] is a Japanese version of the original traditional Chinese art penjing or penzai. Unlike penjing, which utilizes traditional techniques to produce entire natural sceneries in small pots that mimic the grandiose and shape of real life sceneries, the Japanese \"bonsai\" only attempts to produce small trees that mimic the shape of real life trees. Similar versions of the art exist in other cultures, including the miniature living landscapes of Vietnamese Hòn non bộ. It was during the Tang dynasty, when penjing was at its height, that the art was first introduced into Japan.",
       "main_image_url": "https://s3.eu-central-1.amazonaws.com/django-media.bucket/media/1280px-Pescia_museo_del_bonsai_punica_granatum_stile_moyogi_eretto_informale_con_frutti.jpeg",
+      "ean": "",
       "category": [
         2
       ]
@@ -192,6 +256,7 @@
       "tags": "[\"soccer\", \"football\", \"fun\"]",
       "description": "A football, soccer ball, football ball, or association football ball is the ball used in the sport of association football. The name of the ball varies according to whether the sport is called \"football\", \"soccer\", or \"association football\". The ball's spherical shape, as well as its size, weight, and material composition, are specified by Law 2 of the Laws of the Game maintained by the International Football Association Board. Additional, more stringent standards are specified by FIFA and subordinate governing bodies for the balls used in the competitions they sanction.",
       "main_image_url": "https://s3.eu-central-1.amazonaws.com/django-media.bucket/media/Football_Pallo_valmiina-cropped.jpeg",
+      "ean": "",
       "category": [
         3
       ]
@@ -208,6 +273,7 @@
       "tags": "[\"mountains\", \"forest\", \"adventure\", \"expedition\"]",
       "description": "Hiking (walking) boots are footwear specifically designed for protecting the feet and ankles during outdoor walking activities such as hiking. They are one of the most important items of hiking gear, since their quality and durability can determine a hiker's ability to walk long distances without injury. Hiking boots are constructed to provide comfort for walking considerable distance over rough terrain. Boots that protect the hiker's feet and heel are recommended. Hiking boots give ankle support and are fairly stiff.[1] A less popular alternative is to use light trainers with thin soles.[citation needed] Footwear should be neither too loose nor too tight, to help prevent blisters and sore feet. Hiking socks that wick sweat from the feet, provide warmth, and cushion the feet are recommended and a thin, inner sock may also help.[1] Most hiking boots are also designed for other outdoor activities such as backpacking, climbing, mountaineering, and hunting.",
       "main_image_url": "https://s3.eu-central-1.amazonaws.com/django-media.bucket/media/Hiking_shoes_Lowa.jpeg",
+      "ean": "",
       "category": [
         4
       ]
@@ -224,6 +290,7 @@
       "tags": "[\"watering\", \"ecology\", \"boring\"]",
       "description": "A watering can (or watering pot) is a portable container, usually with a handle and a funnel, used to water plants by hand. It has been in use since at least A.D. 79 and has since seen many improvements in design. Apart from watering plants, it has varied uses, as it is a fairly versatile tool.",
       "main_image_url": "https://s3.eu-central-1.amazonaws.com/django-media.bucket/media/440px-MetalwateringcansDec08.jpeg",
+      "ean": "1234",
       "category": [
         5
       ]
@@ -240,6 +307,7 @@
       "tags": "[\"study\", \"projects\", \"development\"]",
       "description": "A whiteboard (also known by the terms marker board, dry-erase board, dry-wipe board, and pen-board) is a glossy, usually white surface for making nonpermanent markings (an evolved version of the blackboard). Whiteboards are analogous to blackboards, but with a smoother surface allowing rapid marking and erasing of markings on their surface. The popularity of whiteboards increased rapidly in the mid-1990s and they have become a fixture in many offices, meeting rooms, school classrooms, and other work environments.",
       "main_image_url": "https://s3.eu-central-1.amazonaws.com/django-media.bucket/media/440px-NCTR_Intern_Claire_Boyle_15558843862.jpeg",
+      "ean": "12345",
       "category": [
         6
       ]
@@ -256,6 +324,7 @@
       "tags": "[\"fun\", \"interesting\", \"history\", \"geography\"]",
       "description": "A guide book or travel guide is \"a book of information about a place designed for the use of visitors or tourists\".[1] It will usually include information about sights, accommodation, restaurants, transportation, and activities. Maps of varying detail and historical and cultural information are often included. Different kinds of guide books exist, focusing on different aspects of travel, from adventure travel to relaxation, or aimed at travelers with different incomes, or focusing on sexual orientation or types of diet.",
       "main_image_url": "https://s3.eu-central-1.amazonaws.com/django-media.bucket/media/440px-Guide_Book_of_the_Panama_California_Exposition.jpeg",
+      "ean": "",
       "category": [
         7
       ]
@@ -272,6 +341,7 @@
       "tags": "[\"tools\", \"equipment\", \"dyi\"]",
       "description": "A hammer is a tool, most often a hand tool, consisting of a weighted \"head\" fixed to a long handle that is swung to deliver an impact to a small area of an object. This can be, for example, to drive nails into wood, to shape metal (as with a forge), or to crush rock.[1][2] Hammers are used for a wide range of driving, shaping, breaking and non-destructive striking applications. Traditional disciplines include carpentry, blacksmithing, warfare, and percussive musicianship (as with a gong).",
       "main_image_url": "https://s3.eu-central-1.amazonaws.com/django-media.bucket/media/Claw-hammer.jpeg",
+      "ean": "",
       "category": [
         8
       ]
@@ -288,6 +358,7 @@
       "tags": "[\"garage\", \"robust tech\", \"electricity\"]",
       "description": "An automotive battery or car battery is a rechargeable battery that is used to start a motor vehicle. Its main purpose is to provide an electric current to the electric-powered starting motor, which in turn starts the chemically-powered internal combustion engine that actually propels the vehicle. Once the engine is running, power for the car's electrical systems is still supplied by the battery, with the alternator charging the battery as demands increase or decrease.",
       "main_image_url": "https://s3.eu-central-1.amazonaws.com/django-media.bucket/media/Photo-CarBattery.jpeg",
+      "ean": "",
       "category": [
         9
       ]
@@ -304,8 +375,60 @@
       "tags": "[\"astronomy\", \"galaxy\", \"planet\", \"observations\", \"night sky\"]",
       "description": "A telescope is an optical instrument using lenses, curved mirrors, or a combination of both to observe distant objects, or various devices used to observe distant objects by their emission, absorption, or reflection of electromagnetic radiation.[1] The first known practical telescopes were refracting telescopes invented in the Netherlands at the beginning of the 17th century, by using glass lenses. They were used for both terrestrial applications and astronomy.\r\n\r\nThe reflecting telescope, which uses mirrors to collect and focus light, was invented within a few decades of the first refracting telescope. In the 20th century, many new types of telescopes were invented, including radio telescopes in the 1930s and infrared telescopes in the 1960s. The word telescope now refers to a wide range of instruments capable of detecting different regions of the electromagnetic spectrum and in some cases other types of detectors.",
       "main_image_url": "https://s3.eu-central-1.amazonaws.com/django-media.bucket/media/440px-100inchHooker.jpeg",
+      "ean": "",
       "category": [
         10
+      ]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+      "public_id": "4f88ecd0-f775-4cac-85c0-1db41ebf02f2",
+      "name": "Siam cat",
+      "quantity": 0,
+      "good_availability_threshold": 100,
+      "tags": "[\"nature\", \"animals\", \"cats\", \"dogs\"]",
+      "description": "The cat is a domestic species of small carnivorous mammal. It is the only domesticated species in the family Felidae and is often referred to as the domestic cat to distinguish it from the wild members of the family.",
+      "main_image_url": null,
+      "ean": "1234567890123",
+      "category": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 17,
+    "fields": {
+      "public_id": "bbc0debf-7e5b-4c48-ae9f-80f4f246c4e1",
+      "name": "Keyboard",
+      "quantity": 1000,
+      "good_availability_threshold": 1500,
+      "tags": "[\"pc\", \"pcmasterrace\", \"electro\", \"gaming\"]",
+      "description": "An electronic keyboard, portable keyboard, or digital keyboard is an electronic musical instrument, an electronic or digital derivative of keyboard instruments.[1] Broadly speaking, the term electronic keyboard or just a keyboard can refer to any type of digital or electronic keyboard instrument. These include synthesizers, digital pianos, stage pianos, electronic organs and digital audio workstations. However, an electronic keyboard is more specifically a synthesizer with a built-in low-wattage power amplifier and small loudspeakers.",
+      "main_image_url": "https://s3.eu-central-1.amazonaws.com/django-media.bucket/media/MLA22LL.jpeg",
+      "ean": "1234567890123",
+      "category": [
+        12
+      ]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 18,
+    "fields": {
+      "public_id": "16bd98d3-e23d-473a-95d2-20a3e424d84a",
+      "name": "Baseball bat",
+      "quantity": 10000,
+      "good_availability_threshold": 12000,
+      "tags": "[\"sport\", \"baseball\", \"usa\"]",
+      "description": "A baseball bat is a smooth wooden or metal club used in the sport of baseball to hit the ball after it is thrown by the pitcher. By regulation it may be no more than 2.75 inches (7.0 cm) in diameter at the thickest part and no more than 42 inches (1.067 m) in length. Although historically bats approaching 3 pounds (1.4 kg) were swung,[1] today bats of 33 ounces (0.94 kg) are common, topping out at 34 ounces (0.96 kg) to 36 ounces (1.0 kg).",
+      "main_image_url": null,
+      "ean": "12345",
+      "category": [
+        3
       ]
     }
   }

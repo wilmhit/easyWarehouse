@@ -8,8 +8,10 @@ from django.db.models.base import ModelBase
 from django.db.models.signals import pre_delete
 from django.dispatch import receiver
 from django.urls import reverse
-from easywarehouse.settings import ELASTICSEARCH_HOST, ELASTICSEARCH_PORT, PRODUCTS_INDEX_NAME
 from elasticsearch import Elasticsearch
+
+from easywarehouse.settings import (ELASTICSEARCH_HOST, ELASTICSEARCH_PORT,
+                                    PRODUCTS_INDEX_NAME)
 
 
 class Product(models.Model):
