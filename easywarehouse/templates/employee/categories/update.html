@@ -6,6 +6,6 @@
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="Submit">
+        <a href="{{ object.get_absolute_url }}"><input type="button" value="Cancel"/></a>
     </form>
-    <a href="{{ object.get_absolute_url }}"><input type="button" value="Cancel"/></a>
 {% endblock %}
