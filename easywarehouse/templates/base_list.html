@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load url_replace %}
+{% block additional_content %}
+    <div class="pagination-buttons">
+        {% if page_obj.has_next %}
+            <a href="?{% url_replace page=page_obj.next_page_number %}">next</a>
+            <a href="?{% url_replace page=page_obj.paginator.num_pages %}">last</a>
+        {% endif %}
+        {% if page_obj.has_previous %}
+            <a href="?{% url_replace page=page_obj.previous_page_number %}">previous</a>
+        {% endif %}
+    </div>
+{% endblock %}

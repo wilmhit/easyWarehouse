@@ -31,3 +31,11 @@ flush:
 
 resetdb:
 	$(PYMANAGE) reset_db
+
+removecontainers:
+	docker rm ew_logstash ew_pgadmin ew_postgres ew_kibana ew_elasticsearch
+
+removevolumes:
+	docker volume rm easywarehouse_es_data easywarehouse_psql_data easywarehouse_pgadmin_data
+
+removealldocker: removecontainers removevolumes
