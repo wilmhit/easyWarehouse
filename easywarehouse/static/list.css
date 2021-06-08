@@ -16,3 +16,7 @@ ul li a{
     color: var(--text);
     font-size: 1.5em;
 }
+
+.action-bar{
+    justify-content: center;
+}

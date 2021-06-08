@@ -1,4 +1,4 @@
-{% extends "employee/base.html" %}
+{% extends "employee/base_list.html" %}
 {% load static %}
 
 {% block content %}
@@ -7,11 +7,15 @@
   <div class="action-bar">
     <a href="{% url 'categories-add' %}">Add new category</a>
   </div>
-    <ul>
-      {% for category in object_list %}
-        <li>
-          <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
-        </li>
-      {% endfor %}
-    </ul>
+
+  <ul>
+    <li>
+      <div class="buttons">
+        {% for category in object_list %}
+              <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+        {% endfor %}
+      </div>
+    </li>
+  </ul>
+
 {% endblock %}
