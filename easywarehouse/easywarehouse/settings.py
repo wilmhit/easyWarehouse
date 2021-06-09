@@ -142,9 +142,12 @@ LOGIN_REDIRECT_URL = "/employee/dashboard"
 LOGOUT_REDIRECT_URL = "/"
 LOGIN_URL = "/login"
 
-# Elasticsearch DSL
+# Elasticsearch
+ELASTICSEARCH_HOST = "localhost"
+ELASTICSEARCH_PORT = 9201
+PRODUCTS_INDEX_NAME = "products"
 ELASTICSEARCH_DSL = {
     "default": {
-        "hosts": "localhost:9201",
+        "hosts": f"{ELASTICSEARCH_HOST}:{ELASTICSEARCH_PORT}",
     },
 }

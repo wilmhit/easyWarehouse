@@ -64,12 +64,16 @@ class ProductDetails(LoginRequiredMixin, GuestProductDetails):
     template_name = "employee/products/details.html"
 
 
-class ListProducts(LoginRequiredMixin, GuestListProducts):
+class ListProducts(LoginRequiredMixin, ListView):
     template_name = "employee/products/list.html"
     paginate_by = 30
+    model = Product
 
-    def get_queryset(self, default_text_query: str = "*"):
-        return super().get_queryset(default_text_query)
+    def get_queryset(self):
+        object_list = self.model.objects.all()
+        if name := self.request.GET.get("text-search"):
+            object_list = object_list.filter(name__icontains=name)
+        return object_list
 
 
 class AddProduct(LoginRequiredMixin, CreateView):

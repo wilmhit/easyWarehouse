@@ -2,10 +2,11 @@
 {% load static %}
 
 {% block content %}
-  <div class="image-page">
-    <img src="{{ object.image.url }}" />
-    <p>{{ object.image }}</p>
-    <p>Belongs to product: {{ object.product.id }}</p>
-    <a href="{% url 'images-delete' object.id %}">Delete image</a>
-  </div>
+    <div class="image-page">
+        <img src="{{ object.image.url }}"/>
+        <p>{{ object.image }}</p>
+        <p>Belongs to product: {{ object.product.id }}</p>
+        <p>Hosting url: {{ object.image.url }}</p>
+        <a href="{% url 'images-delete' object.id %}">Delete image</a>
+    </div>
 {% endblock %}

@@ -21,7 +21,7 @@ superuser:
 	$(PYMANAGE) createsuperuser  --noinput
 
 dumpdata:
-	$(PYMANAGE) dumpdata products.Image products.Category products.Product  -o data/dump.json --format json
+	$(PYMANAGE) dumpdata images.Image categories.Category products.Product  -o data/dump.json --format json
 
 loaddata:
 	$(PYMANAGE) loaddata data/dump.json
