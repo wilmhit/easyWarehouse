@@ -83,7 +83,7 @@ class AddProduct(LoginRequiredMixin, CreateView):
 
 
 class UpdateProduct(LoginRequiredMixin, UpdateView):
-    template_name = "employee/products/update.html"
+    template_name = "employee/products/add.html"
     form_class = ProductForm
     success_url = reverse_lazy("products-list")
     model = Product
